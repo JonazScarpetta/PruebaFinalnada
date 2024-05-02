@@ -4,6 +4,7 @@
   --second-color--: rgb(168, 224, 255);
   --third-color--: rgb(240, 25, 25);
   --bg-alpha-color--: rgba(245, 245, 245, 0.75);
+  --color-letra-blanco--: rgb(255, 255, 255);
 }
 
 /*  *************** Reset Styles **************** */
@@ -86,4 +87,10 @@ body {
 }
 .bg-color {
   background-color: rgb(62, 81, 122);
+}
+
+.fondo {
+  background-color: var(--firt-color--);
+  margin: 30px 40px 10px 10px;
+  color: var(--color-letra-blanco--);
 }
