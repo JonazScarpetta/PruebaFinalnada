@@ -1,22 +1,4 @@
-// botones pagina inicio
-document
-  .getElementById("btn-iniciar-sesion-registro")
-  .addEventListener("click", function () {
-    window.location.href = "/html/iniciar-sesion-registro.html";
-  });
-
-document
-  .getElementById("btn-iniciar-sesion-autorizacion")
-  .addEventListener("click", function () {
-    window.location.href = "/html/iniciar-sesion-autorizador.html";
-  });
-
-document
-  .getElementById("btn-nuevo-usuario")
-  .addEventListener("click", function () {
-    window.location.href = "/html/registro.html";
-  });
-// fin de botones pagina inicio
+console.log("holas");
 
 //boton de alerta//
 const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
@@ -32,10 +14,13 @@ const appendAlert = (message, type) => {
   alertPlaceholder.append(wrapper);
 };
 
-const alertTrigger = document.getElementById("liveAlertBtn");
-if (alertTrigger) {
-  alertTrigger.addEventListener("click", () => {
-    appendAlert("Nice, you triggered this alert message!", "success");
-  });
-}
+const alertTrigger = document.getElementById("emergencia");
+alertTrigger.addEventListener("click", function () {
+  let ejemplo = document.getElementById("ejemplo1").value;
+  let ejemplo2 = document.getElementById("ejemplochek").checked;
+  let ejemplo3 = document.getElementById("ejemplochek2");
+  console.log(ejemplo);
+  console.log(ejemplo2);
+  console.log(ejemplo3);
+});
 // fin boton de alerta

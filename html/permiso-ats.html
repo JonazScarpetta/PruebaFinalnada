@@ -72,7 +72,7 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="ejemplo1"
                 rows="3"
               ></textarea>
             </div>
@@ -260,7 +260,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
+                  id="ejemplochek"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                   ¿El ruido del lugar de trabajo es tolerable y se puede
@@ -272,7 +272,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
+                  id="ejemplochek2"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"
                   > ¿El ruido del lugar de trabajo es tolerable y se puede controlar?</label
@@ -444,7 +444,8 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              inicio
+              <a class="text-white" href="/html/inicio.html">inicio</a>
+            </button>
             </button>
           </div>
           <div class="col">
@@ -457,7 +458,8 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              Guardar
+              <a class="text-white" href="/html/archivos-guardados.html">Archivo</a>
+            </button>
             </button>
           </div>
           <div class="col">
@@ -470,24 +472,26 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              Preferidos
+              <a class="text-white" href="/html/plantillas.html">Plantillas</a>
+            </button>
             </button>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="row sticky-bottom m-3">
+      <div class="text-center">
+        <button id="emergencia" type="button" class="btn btn-danger">Emergencia</button>
+      </div>
+      <br /><br />
+    </div>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
-    <div class="row sticky-bottom m-3">
-      <div class="text-center">
-        <button type="button" class="btn btn-danger">Emergencia</button>
-      </div>
-      <br /><br />
-    </div>
+    <script src="../js/main.js"></script>
   </body>
 </html>
