@@ -180,10 +180,101 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            second item's accordion body. Let's imagine this being filled with
-            some actual content.
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Ciudad</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Ciudad"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Direccion</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Direccion"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Fecha de Inicio de Actividad</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Fecha de Culminacion de Actividad</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Hora de inicio de Actividad</label
+              >
+              <input
+                type="time"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Hora de Culminacion de Actividad</label
+              >
+              <input
+                type="time"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="alturaActividad" class="form-label"
+                >Altura de la Actividad (en metros)</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="alturaActividad"
+                step="0.01"
+                placeholder="Ingrese la altura"
+              />
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+              <label class="form-check-label" for="flexSwitchCheckDefault"
+                >¿Es una Actividad Rutinaria?</label
+              >
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea2" class="form-label"
+                >Descripcion y Precedimiento de la Tarea</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea2"
+                rows="3"
+              ></textarea>
+            </div>
           </div>
         </div>
       </div>
@@ -340,12 +431,44 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            third item's accordion body. Nothing more exciting happening here in
-            terms of content, but just filling up the space to make it look, at
-            least at first glance, a bit more representative of how this would
-            look in a real-world application.
+            <div class="mb-1">
+              <label class="form-label" for="cargo">Firma Residente SST:</label>
+              <input
+                id="archivo-pdf-firma-digital"
+                name="archivo-pdf-firma-digital"
+                type="file"
+                class="form-control"
+                aria-label="file example"
+                required
+              />
+            </div>
+            <label class="form-label" for="documento"
+              >Usuario Autroizador:</label
+            >
+            <select
+              class="form-select form-label"
+              aria-label="Default select example"
+            >
+              <option selected>Selecione a un Usuario que Autorizara</option>
+              <option value="cedula" class="form-control">
+                Jonathan lopez
+              </option>
+              <option value="pasaporte" class="form-label">
+                Juan Carlos Ramirez
+              </option>
+              <option value="permiso-permanencia-" class="form-select">
+                Oscar Agudelo
+              </option>
+            </select>
+            <div class="container-sm mt-5">
+              <div
+                class="row m-3 p-3 border border-primary-subtle border-5 rounded-4 text-center"
+              >
+                <button type="button" class="btn btn-outline-primary">
+                  ENVIAR
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

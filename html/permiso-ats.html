@@ -67,94 +67,14 @@
         >
           <div class="accordion-body">
             <div class="mb-3">
-              <label class="form-label" for="nombres">Nombres:</label>
-              <input
-                class="form-control"
-                id="nombres"
-                name="nombres"
-                placeholder="Escribe tus nombres"
-                type="text"
-                required
-              />
-              <label class="form-label" for="apellidos">Apellidos:</label>
-              <input
-                class="form-control"
-                id="apellidos"
-                name="apellidos"
-                placeholder="Escribe tus apellidos"
-                type="text"
-                required
-              />
-              <label class="form-label" for="documento"
-                >Tipo de documento:</label
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Descripcion y Precedimiento de la Tarea</label
               >
-              <select
-                class="form-select form-label"
-                aria-label="Default select example"
-              >
-                <option selected>Selecione una opcion</option>
-                <option value="cedula" class="form-control">Cedula</option>
-                <option value="pasaporte" class="form-label">Pasaporte</option>
-                <option value="permiso-permanencia-" class="form-select">
-                  Permiso de pemanencia
-                </option>
-              </select>
-              <label class="form-label" for="numero-identificacion"
-                >Numero de Identificacion:</label
-              >
-              <input
+              <textarea
                 class="form-control"
-                id="numero-de-identificacion"
-                name="numero-de-identificacion"
-                placeholder="Escribe tu numero de identificacion"
-                type="number"
-                required
-              />
-              <label class="form-label" for="cargo">Cargo:</label>
-              <input
-                class="form-control"
-                id="cargo"
-                name="cargo"
-                placeholder="Escribe tu Cargo"
-                type="text"
-                required
-              /><label for="exampleFormControlInput1" class="form-label"
-                >Correo Electronico</label
-              >
-              <input
-                type="email"
-                name="cargo"
-                class="form-control"
-                id="email"
-                placeholder="nombre@ejemplo.com"
-                required
-              />
-
-              <div class="mb-1">
-                <label class="form-label" for="cargo"
-                  >Cargar Planilla de Seguridad Social:</label
-                >
-                <input
-                  id="archivo-pdf-planilla"
-                  name="aechivo-pdf-planilla"
-                  type="file"
-                  class="form-control"
-                  aria-label="file example"
-                  required
-                />
-                <div class="invalid-feedback">Cargar arvhivo PDF</div>
-                <label for="vencimiento-de-planilla" class="form-label"
-                  >Fecha de Vencimiento planilla:</label
-                >
-                <input
-                  id="vencimiento-de-planilla"
-                  name="vencimiento-de-planilla"
-                  type="date"
-                  class="form-control"
-                  id="fecha"
-                  required
-                />
-              </div>
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
             </div>
           </div>
         </div>
@@ -178,10 +98,32 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            second item's accordion body. Let's imagine this being filled with
-            some actual content.
+            <label class="form-label" for="documento"
+              >Tipo de Herramienta:</label
+            >
+            <select
+              class="form-select form-label"
+              aria-label="Default select example"
+            >
+              <option selected>Selecione una opcion</option>
+              <option value="manual" class="form-control">Manual</option>
+              <option value="electrica" class="form-label">Electrica</option>
+              <option value="neumatica" class="form-select">Neumatica</option>
+              <option value="hidraulica" class="form-control">
+                Hidraulica
+              </option>
+              <option value="mecanica" class="form-label">Mecanica</option>
+              <option value="hidraulica" class="form-control">Otros</option>
+            </select>
+
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Descripcion de la Herramienta a Utilizar</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
           </div>
         </div>
       </div>
@@ -204,90 +146,285 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            second item's accordion body. Let's imagine this being filled with
-            some actual content.
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Escalera Sencilla
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Escalera Doble Extendible
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Escalera Tipo Tijera
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Andamio Modular
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Andamio Colgante
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckIndeterminate"
+              />
+              <label class="form-check-label" for="flexCheckIndeterminate">
+                Elevador Personal
+              </label>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Otro / Cual</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapsefour"
-            aria-expanded="false"
-            aria-controls="flush-collapsefour"
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapsefour"
+              aria-expanded="false"
+              aria-controls="flush-collapsefour"
+            >
+              <h5>Analisis de Tarea</h5>
+            </button>
+          </h2>
+          <div
+            id="flush-collapsefour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
           >
-            <h5>Analisis de Tarea</h5>
-          </button>
-        </h2>
-        <div
-          id="flush-collapsefour"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            second item's accordion body. Let's imagine this being filled with
-            some actual content.
+            <div class="accordion-body">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"
+                  >¿Existen, están despejadas y señalizadas las rutas, salidas
+                  de emergencia, planos de evacuación?</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                  ¿El ruido del lugar de trabajo es tolerable y se puede
+                  controlar?</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"
+                  > ¿El ruido del lugar de trabajo es tolerable y se puede controlar?</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"
+                  > ¿La iluminación de lugar es aceptable ?</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"
+                  > ¿No Hay peligro de resbalar o tropezar alrededor del área de trabajo?</label
+                >
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapsefive"
-            aria-expanded="false"
-            aria-controls="flush-collapsefive"
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapsefive"
+              aria-expanded="false"
+              aria-controls="flush-collapsefive"
+            >
+              <h5>Descripcion de la Actividad</h5>
+            </button>
+          </h2>
+          <div
+            id="flush-collapsefive"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
           >
-            <h5>Descripcion de la Actividad</h5>
-          </button>
-        </h2>
-        <div
-          id="flush-collapsefive"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            second item's accordion body. Let's imagine this being filled with
-            some actual content.
+            <div class="accordion-body">
+              <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Pasos detallados de la actividad</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div><div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Peligros Existentes y Pontenciales</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div><div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Consecuencias</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div><div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Controles Requeridos</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div><div class="mb-3">
+  <label for="formFileMultiple" class="form-label">Cargar Evidencia Fotografica</label>
+  <input class="form-control" type="file" id="formFileMultiple" multiple>
+</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapsesix"
-            aria-expanded="false"
-            aria-controls="flush-collapsesix"
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapsesix"
+              aria-expanded="false"
+              aria-controls="flush-collapsesix"
+            >
+              <h5>Aprobacion y Validacion del Permiso</h5>
+            </button>
+          </h2>
+          <div
+            id="flush-collapsesix"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
           >
-            <h5>Aprobacion y Validacion del Permiso</h5>
-          </button>
-        </h2>
-        <div
-          id="flush-collapsesix"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div class="accordion-body">
-            Placeholder content for this accordion, which is intended to
-            demonstrate the <code>.accordion-flush</code> class. This is the
-            third item's accordion body. Nothing more exciting happening here in
-            terms of content, but just filling up the space to make it look, at
-            least at first glance, a bit more representative of how this would
-            look in a real-world application.
+            <div class="accordion-body">
+              <div class="mb-1">
+                <label class="form-label" for="cargo"
+                  >Firma Residente SST:</label
+                >
+                <input
+                  id="archivo-pdf-firma-digital"
+                  name="archivo-pdf-firma-digital"
+                  type="file"
+                  class="form-control"
+                  aria-label="file example"
+                  required
+                />
+              </div>
+              <label class="form-label" for="documento"
+                >Usuario Autroizador:</label
+              >
+              <select
+                class="form-select form-label"
+                aria-label="Default select example"
+              >
+                <option selected>Selecione a un Usuario que Autorizara</option>
+                <option value="cedula" class="form-control">
+                  Jonathan lopez
+                </option>
+                <option value="pasaporte" class="form-label">
+                  Juan Carlos Ramirez
+                </option>
+                <option value="permiso-permanencia-" class="form-select">
+                  Oscar Agudelo
+                </option>
+              </select>
+              <div class="container-sm mt-5">
+                <div
+                  class="row m-3 p-3 border border-primary-subtle border-5 rounded-4 text-center"
+                >
+                  <button type="button" class="btn btn-outline-primary">
+                    ENVIAR
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
