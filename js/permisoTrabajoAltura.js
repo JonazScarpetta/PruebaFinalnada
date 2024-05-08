@@ -221,6 +221,8 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
     document.getElementById("registro-fotografico-trabajo-alturas").value;
   impresionFormularioTrabajoAltura.seleccionTrabajadorAlturas =
     document.getElementById("selecion-trabajador-alturas").value;
+  impresionFormularioTrabajoAltura.seleccionAutorizadorAlturas =
+    document.getElementById("seleccion-autorizador-alturas").value;
 
   console.log(impresionFormularioTrabajoAltura);
 });

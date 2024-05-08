@@ -72,7 +72,7 @@
               >
               <textarea
                 class="form-control"
-                id="ejemplo1"
+                id="descripcion-procedimiento-tarea"
                 rows="3"
               ></textarea>
             </div>
@@ -104,6 +104,7 @@
             <select
               class="form-select form-label"
               aria-label="Default select example"
+              id="tipo-herramienta"
             >
               <option selected>Selecione una opcion</option>
               <option value="manual" class="form-control">Manual</option>
@@ -121,7 +122,7 @@
             >
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
+              id="descripcion-herramienta"
               rows="3"
             ></textarea>
           </div>
@@ -151,7 +152,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked1"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Escalera Sencilla
@@ -162,7 +163,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked2"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Escalera Doble Extendible
@@ -173,7 +174,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked3"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Escalera Tipo Tijera
@@ -184,7 +185,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked4"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Andamio Modular
@@ -195,7 +196,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked5"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Andamio Colgante
@@ -206,7 +207,7 @@
                 class="form-check-input"
                 type="checkbox"
                 value=""
-                id="flexCheckIndeterminate"
+                id="acordion3checked6"
               />
               <label class="form-check-label" for="flexCheckIndeterminate">
                 Elevador Personal
@@ -218,7 +219,7 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="acordeon3-otro"
                 rows="3"
               ></textarea>
             </div>
@@ -248,7 +249,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
+                  id="acordion4checked1"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"
                   >¿Existen, están despejadas y señalizadas las rutas, salidas
@@ -260,7 +261,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="ejemplochek"
+                  id="acordion4checked2"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                   ¿El ruido del lugar de trabajo es tolerable y se puede
@@ -272,7 +273,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="ejemplochek2"
+                  id="acordion4checked3"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"
                   > ¿El ruido del lugar de trabajo es tolerable y se puede controlar?</label
@@ -283,7 +284,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
+                  id="acordion4checked4"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"
                   > ¿La iluminación de lugar es aceptable ?</label
@@ -294,7 +295,7 @@
                   class="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
+                  id="acordion4checked5"
                 />
                 <label class="form-check-label" for="flexSwitchCheckDefault"
                   > ¿No Hay peligro de resbalar o tropezar alrededor del área de trabajo?</label
@@ -328,7 +329,7 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="pasos-detallados-actividad"
                 rows="3"
               ></textarea>
             </div><div class="mb-3">
@@ -337,7 +338,7 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="peligros-existentes-potenciales"
                 rows="3"
               ></textarea>
             </div><div class="mb-3">
@@ -346,7 +347,7 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="consecuencias"
                 rows="3"
               ></textarea>
             </div><div class="mb-3">
@@ -355,74 +356,96 @@
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="controles-requeridos"
                 rows="3"
               ></textarea>
-            </div><div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Cargar Evidencia Fotografica</label>
-  <input class="form-control" type="file" id="formFileMultiple" multiple>
-</div>
+            </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapsesix"
-              aria-expanded="false"
-              aria-controls="flush-collapsesix"
-            >
-              <h5>Aprobacion y Validacion del Permiso</h5>
-            </button>
-          </h2>
-          <div
-            id="flush-collapsesix"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
+       <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseeich"
+            aria-expanded="false"
+            aria-controls="flush-collapseeich"
           >
-            <div class="accordion-body">
-              <div class="mb-1">
-                <label class="form-label" for="cargo"
-                  >Firma Residente SST:</label
-                >
-                <input
-                  id="archivo-pdf-firma-digital"
-                  name="archivo-pdf-firma-digital"
-                  type="file"
-                  class="form-control"
-                  aria-label="file example"
-                  required
-                />
-              </div>
-              <label class="form-label" for="documento"
-                >Usuario Autroizador:</label
+            <h5>Aprobacion y Validacion del Permiso</h5>
+          </button>
+        </h2>
+        <div
+          id="flush-collapseeich"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            <div class="mb-1">
+              <label class="form-label" for="cargo">Firma Residente SST:</label>
+              <input
+                id="archivo-firma-digital-sst-ats"
+                name="archivo-pdf-firma-digital"
+                type="file"
+                class="form-control"
+                aria-label="file example"
+                required
+              />
+            </div>
+            <div class="mb-1">
+              <label class="form-label" for="cargo">Registro Fotografico:</label>
+              <input
+                id="registro-fotografico-ats"
+                name="archivo-pdf-firma-digital"
+                type="file"
+                class="form-control"
+                aria-label="file example"
+                required
+              />
+            </div><div><label class="form-label" for="documento"
+              >Personal que Realizara la Actividad:</label
+            >
+            <select
+              class="form-select form-label"
+              aria-label="Default select example"
+              id="seleccion-personal-ats"
+            >
+              <option selected>Selecione el personal que realizara la actividad</option>
+              <option value="jonathan lopez" class="form-control">
+                Jonathan lopez
+              </option>
+              <option value="Juan Carlos Ramirez" class="form-label">
+                Juan Carlos Ramirez
+              </option>
+              <option value="Oscar Agudelo-" class="form-select">
+                Oscar Agudelo
+              </option>
+            </select></div><div><label class="form-label" for="documento"
+              >Personal que Autorizara la Actividad:</label
+            >
+            <select
+              class="form-select form-label"
+              aria-label="Default select example"
+              id="seleccion-autorizador-ats"
+            >
+              <option selected>Selecione el personal que Autorizara la actividad</option>
+              <option value="Luis Alberto" class="form-control">
+               Luis Albreto
+              </option>
+              <option value="jimmy gutierrez" class="form-label">
+                jimmy gutierrez
+              </option>
+              <option value="Alfredo Burbano-" class="form-select">
+                Alfredo Burnano
+              </option>
+            </select></div>
+            
+            <div class="container-sm mt-5">
+              <div
+                class="row m-3 p-3 border border-primary-subtle border-5 rounded-4 text-center"
               >
-              <select
-                class="form-select form-label"
-                aria-label="Default select example"
-              >
-                <option selected>Selecione a un Usuario que Autorizara</option>
-                <option value="cedula" class="form-control">
-                  Jonathan lopez
-                </option>
-                <option value="pasaporte" class="form-label">
-                  Juan Carlos Ramirez
-                </option>
-                <option value="permiso-permanencia-" class="form-select">
-                  Oscar Agudelo
-                </option>
-              </select>
-              <div class="container-sm mt-5">
-                <div
-                  class="row m-3 p-3 border border-primary-subtle border-5 rounded-4 text-center"
-                >
-                  <button type="button" class="btn btn-outline-primary">
-                    ENVIAR
-                  </button>
-                </div>
+               <button type="button" class="btn btn-outline-primary" id="enviar-datos-ats" >enviar</button>
               </div>
             </div>
           </div>
@@ -492,6 +515,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/permisoAts.js"></script>
   </body>
 </html>
