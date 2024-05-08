@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AlturaAPP</title>
+    <title>AlturaConnectAPP</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,12 +23,13 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header
-      class="container-sm fondo mx-auto p-5 mt-5 mb-5 bg-primary text-center text-white border border-primary-subtle border-5 rounded-4"
-      style="width: 250px"
-    >
-      <h1>AlturaAPP</h1>
-    </header>
+    <div class="container-sm mt-5">
+      <div
+        class=" bg-primary m-4 p-5 border border-primary-subtle border-5 rounded-4 text-white text-center"
+      >
+        <h3>AlturaConnectAPP</h3>
+      </div>
+    </div>
     <section class="container-sm">
       <form>
         <div class="mb-3">
@@ -38,8 +39,8 @@
           <input
             type="email"
             class="form-control"
-            id="correo-electronico-de-autorizacion"
-            name="correo-electronico-de-autorizacion"
+            id="correo-electronico-autorizado"
+            name="correo-electronico-autorizado"
             aria-describedby="emailHelp"
             placeholder="correo@ejemplo.com"
           />
@@ -52,11 +53,11 @@
           <input
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            id="clave-autorizado-inicio"
           />
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <input type="checkbox" class="form-check-input" id="usuario-autorizado-Check" />
           <label class="form-check-label" for="exampleCheck1"
             >Soy Usuario de Autorizacion</label
           >
@@ -65,10 +66,10 @@
       </form>
     </section>
     <div class="row justify-content-evenly mb-3 pt-3"><div class="col-4">
-      <button type="submit"  id="retorno"  class="btn btn-primary"><a class="text-white" href="/html/inicio.html">Atras</a></button>
+      <button type="submit"  id="retorno"  class="btn btn-primary"><a class="text-white" href="/index.html">Atras</a></button>
     </div>
     <div class="col-4">
-      <button type="submit"  id="avanzar-registro"  class="btn btn-primary"><a class="text-white" href="/html/ingreso.html">Iniciar </a></button>
+      <button type="submit"  id="iniciar-sesion-autorizado" name="iniciar-sesion-autorizado" class="btn btn-primary"><a class="text-white" href="">Iniciar </a></button>
     </div>
     
   </div>
@@ -78,6 +79,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
+    <script src="../js/iniciarSesion-Autorizado.js"></script>
   </body>
 </html>
