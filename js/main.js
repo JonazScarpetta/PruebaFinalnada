@@ -161,3 +161,58 @@
 //   console.log(examenMedico);
 //   console.log(fechaVencimientoExamenMedico);
 // });
+
+//Codigo de ingreso en java script contraseña basica.
+
+// function validarContraseñas() {
+//   // Obtener las contraseñas ingresadas por el usuario
+//   var contraseña1 = document.getElementById("contraseña1").value;
+//   var contraseña2 = document.getElementById("contraseña2").value;
+
+//   // Comparar las contraseñas
+//   if (contraseña1 === contraseña2) {
+//     // Contraseñas coinciden, permitir el ingreso
+//     alert("Contraseñas coinciden. ¡Bienvenido!");
+//   } else {
+//     // Contraseñas no coinciden, mostrar alerta de error
+//     alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+//   }
+// }
+
+// contraseña con caracterrs especiales
+
+// function validarContraseñas() {
+//   var contraseña1 = document.getElementById("contraseña1").value;
+//   var contraseña2 = document.getElementById("contraseña2").value;
+
+//   // Expresiones regulares para verificar las condiciones
+//   var tieneMayuscula = /[A-Z]/.test(contraseña1);
+//   var tieneNumero = /\d/.test(contraseña1);
+//   var longitudValida = contraseña1.length >= 8;
+
+//   // Verificar las condiciones
+//   if (
+//     contraseña1 === contraseña2 &&
+//     tieneMayuscula &&
+//     tieneNumero &&
+//     longitudValida
+//   ) {
+//     alert("Contraseñas coinciden. ¡Bienvenido!");
+//   } else {
+//     var mensajeError =
+//       "Las contraseñas no coinciden o no cumplen con los requisitos:\n";
+//     if (contraseña1 !== contraseña2) {
+//       mensajeError += "- Las contraseñas no coinciden.\n";
+//     }
+//     if (!tieneMayuscula) {
+//       mensajeError += "- Debe incluir al menos una letra mayúscula.\n";
+//     }
+//     if (!tieneNumero) {
+//       mensajeError += "- Debe incluir al menos un número.\n";
+//     }
+//     if (!longitudValida) {
+//       mensajeError += "- Debe tener al menos 8 caracteres.\n";
+//     }
+//     alert(mensajeError);
+//   }
+// }
