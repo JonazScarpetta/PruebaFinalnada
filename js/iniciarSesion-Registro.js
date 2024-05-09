@@ -9,7 +9,7 @@ iniciarSesionRegistro.addEventListener("click", function (event) {
   usuarioRegistro.correoElectronicoRegistro = document.getElementById(
     "correo-electronico-registro"
   ).value;
-  usuarioRegistro.usuarioRegistroCheck = document.getElementById(
+  usuarioRegistro.usuarioRegistroChecked = document.getElementById(
     "usuario-registro-Check"
   ).checked;
   usuarioRegistro.claveRegistro = document.getElementById(
@@ -17,4 +17,22 @@ iniciarSesionRegistro.addEventListener("click", function (event) {
   ).value;
 
   console.log(usuarioRegistro);
+  //iniciar sesion registro
+
+  function validarContrasenasIngresoRegistro() {
+    var clavePruebaRegistro = "R123";
+    var correoPruebaRegistro = "r@gmail.com";
+
+    if (
+      clavePruebaRegistro === usuarioRegistro.claveRegistro &&
+      correoPruebaRegistro === usuarioRegistro.correoElectronicoRegistro &&
+      usuarioRegistro.usuarioRegistroChecked === true
+    ) {
+      alert("Contraseñas coinciden. ¡Bienvenido!");
+      window.location.href = "../html/ingreso.html";
+    } else {
+      alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+    }
+  }
+  validarContrasenasIngresoRegistro();
 });

@@ -83,15 +83,17 @@
         type="number"
         required
       />
-      <label class="form-label" for="cargo">Cargo:</label>
-      <input
-        class="form-control"
+      <label class="form-label" for="documento">Tipo de Usuario:</label>
+      <select
+        class="form-select form-label"
+        aria-label="Default select example"
         id="cargo"
-        name="cargo"
-        placeholder="Escribe tu Cargo"
-        type="text"
-        required
-      /><label for="exampleFormControlInput1" class="form-label"
+      >
+        <option selected>Selecione una opcion</option>
+        <option value="usuario-registrador" class="form-control " id="cedula" >Usuario Registrador</option>
+        <option value="usuario-autorizador" class="form-label" id="cedula-de-extranjeria" >Usuario Autorizador</option>
+        
+      </select><label for="exampleFormControlInput1" class="form-label"
         >Correo Electronico</label
       >
       <input

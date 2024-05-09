@@ -6,14 +6,34 @@ iniciarSesionAutorizado.addEventListener("click", function (event) {
 
   const usuarioAutorizado = {};
 
-  usuarioAutorizado.correoElectronico = document.getElementById(
+  usuarioAutorizado.correoElectronicoAutorizado = document.getElementById(
     "correo-electronico-autorizado"
   ).value;
-  usuarioAutorizado.checked = document.getElementById(
+  usuarioAutorizado.usaurioAutorizadochecked = document.getElementById(
     "usuario-autorizado-Check"
   ).checked;
-  usuarioAutorizado.clave = document.getElementById(
+  usuarioAutorizado.claveAutorizado = document.getElementById(
     "clave-autorizado-inicio"
   ).value;
   console.log(usuarioAutorizado);
+
+  //iniciar sesion
+
+  function validarContrasenasIngresoAutorizado() {
+    var clavePruebaAutorizado = "A123";
+    var correoPruebaAutorizado = "a@gmail.com";
+
+    if (
+      clavePruebaAutorizado === usuarioAutorizado.claveAutorizado &&
+      correoPruebaAutorizado ===
+        usuarioAutorizado.correoElectronicoAutorizado &&
+      usuarioAutorizado.usaurioAutorizadochecked === true
+    ) {
+      alert("Contraseñas coinciden. ¡Bienvenido!");
+      window.location.href = "../html/ingreso.html";
+    } else {
+      alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+    }
+  }
+  validarContrasenasIngresoAutorizado();
 });
