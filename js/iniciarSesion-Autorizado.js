@@ -30,7 +30,7 @@ iniciarSesionAutorizado.addEventListener("click", function (event) {
       usuarioAutorizado.usaurioAutorizadochecked === true
     ) {
       alert("Contraseñas coinciden. ¡Bienvenido!");
-      window.location.href = "../html/ingreso.html";
+      window.location.href = "../html/ingresoAutorizado.html";
     } else {
       alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
     }

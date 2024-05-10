@@ -29,7 +29,7 @@ iniciarSesionRegistro.addEventListener("click", function (event) {
       usuarioRegistro.usuarioRegistroChecked === true
     ) {
       alert("Contraseñas coinciden. ¡Bienvenido!");
-      window.location.href = "../html/ingreso.html";
+      window.location.href = "../html/ingresoRegistro.html";
     } else {
       alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
     }
