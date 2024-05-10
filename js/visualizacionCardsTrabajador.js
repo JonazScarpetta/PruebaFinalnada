@@ -1,68 +1,31 @@
+//sin botones inferiores
 document.addEventListener("DOMContentLoaded", function () {
-  // Crear el encabezado
-  var headerContainer = document.createElement("div");
-  headerContainer.classList.add("container-sm", "mt-5");
+  // Crear contenedor principal
+  var container = document.createElement("div");
+  container.classList.add("container");
 
-  var headerRow = document.createElement("div");
-  headerRow.classList.add(
-    "row",
-    "bg-primary",
-    "m-3",
-    "p-3",
-    "border",
-    "border-primary-subtle",
-    "border-5",
-    "rounded-4"
-  );
+  // Crear el contenedor secundario
+  var secondaryContainer = document.createElement("div");
+  secondaryContainer.classList.add("container");
 
-  var backButtonCol = document.createElement("div");
-  backButtonCol.classList.add("col-3", "text-center", "text-white");
-  backButtonCol.style.cursor = "pointer";
-  backButtonCol.addEventListener("click", function () {
-    window.history.back();
-  });
+  // Agregar imagen al contenedor secundario
+  var img1 = createImage("/img/Bruno.jpg");
+  var img2 = createImage("/img/Paisaje1.jpg");
+  var img3 = createImage("/img/paisaje2.jpg");
+  var img4 = createImage("/img/firma.jpg");
 
-  var backButtonSvg = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "svg"
-  );
-  backButtonSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  backButtonSvg.setAttribute("width", "30");
-  backButtonSvg.setAttribute("height", "30");
-  backButtonSvg.setAttribute("fill", "currentColor");
-  backButtonSvg.setAttribute("class", "bi bi-arrow-left-square");
-  backButtonSvg.setAttribute("viewBox", "0 0 16 16");
+  secondaryContainer.appendChild(img1);
+  secondaryContainer.appendChild(img2);
+  secondaryContainer.appendChild(img3);
+  secondaryContainer.appendChild(img4);
 
-  var backButtonPath = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "path"
-  );
-  backButtonPath.setAttribute("fill-rule", "evenodd");
-  backButtonPath.setAttribute(
-    "d",
-    "M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
-  );
+  // Agregar contenedor secundario al contenedor principal
+  container.appendChild(secondaryContainer);
 
-  backButtonSvg.appendChild(backButtonPath);
-  backButtonCol.appendChild(backButtonSvg);
-
-  var headerTitleCol = document.createElement("div");
-  headerTitleCol.classList.add("col-9", "text-center", "text-white");
-  var headerTitle = document.createElement("h5");
-  headerTitle.appendChild(document.createTextNode("Cards"));
-  headerTitleCol.appendChild(headerTitle);
-
-  headerRow.appendChild(backButtonCol);
-  headerRow.appendChild(headerTitleCol);
-  headerContainer.appendChild(headerRow);
-  document.body.appendChild(headerContainer);
-
-  // Crear el formulario de cards
-  var formContainer = document.createElement("div");
-  formContainer.classList.add("container");
-
+  // Crear formulario
   var form = document.createElement("form");
 
+  // Agregar elementos al formulario
   var formGroupLabels = [
     "Nombre",
     "Apellido",
@@ -179,65 +142,24 @@ document.addEventListener("DOMContentLoaded", function () {
     form.appendChild(formGroup);
   }
 
-  formContainer.appendChild(form);
-  document.body.appendChild(formContainer);
+  // Agregar formulario al contenedor principal
+  container.appendChild(form);
 
-  // Crear el footer
-  var footer = document.createElement("div");
-  footer.classList.add(
-    "container-sm",
-    "justify-content-end",
-    "sticky",
-    "bottom"
-  );
-  var footerRow = document.createElement("div");
-  footerRow.classList.add("row", "m-3");
-  var footerButtonCol = document.createElement("div");
-  footerButtonCol.classList.add("col");
-
-  var salirButton = createButton("Salir", "/index.html");
-  var historicoButton = createButton(
-    "Historico",
-    "/html/archivos-guardados.html"
-  );
-  var plantillaButton = createButton("Plantilla", "/html/plantillas.html");
-
-  footerButtonCol.appendChild(salirButton);
-  footerButtonCol.appendChild(historicoButton);
-  footerButtonCol.appendChild(plantillaButton);
-
-  footerRow.appendChild(footerButtonCol);
-  footer.appendChild(footerRow);
-  document.body.appendChild(footer);
-
-  // Crear botón de emergencia
-  var emergencyButtonRow = document.createElement("div");
-  emergencyButtonRow.classList.add("row", "sticky-bottom", "m-3");
-
-  var emergencyButtonCol = document.createElement("div");
-  emergencyButtonCol.classList.add("col", "text-center");
-
-  var emergencyButton = createButton("Emergencia", "#");
-  emergencyButton.classList.add("btn-danger");
-
-  emergencyButtonCol.appendChild(emergencyButton);
-  emergencyButtonRow.appendChild(emergencyButtonCol);
-  document.body.appendChild(emergencyButtonRow);
+  // Agregar contenedor principal al body
+  document.body.appendChild(container);
 });
 
-function createButton(text, link) {
-  var button = document.createElement("button");
-  button.type = "button";
-  button.classList.add("btn", "btn-primary");
-  button.style.setProperty("--bs-btn-padding-y", "0.25rem");
-  button.style.setProperty("--bs-btn-padding-x", "0.5rem");
-  button.style.setProperty("--bs-btn-font-size", "0.75rem");
+function createImage(src) {
+  var imgContainer = document.createElement("div");
+  imgContainer.classList.add("mb-3");
+  imgContainer.style.width = "10rem";
 
-  var buttonLink = document.createElement("a");
-  buttonLink.classList.add("text-white");
-  buttonLink.href = link;
-  buttonLink.appendChild(document.createTextNode(text));
+  var img = document.createElement("img");
+  img.setAttribute("src", src);
+  img.classList.add("img-thumbnail");
+  img.setAttribute("alt", "Trabajadores");
 
-  button.appendChild(buttonLink);
-  return button;
+  imgContainer.appendChild(img);
+
+  return imgContainer;
 }

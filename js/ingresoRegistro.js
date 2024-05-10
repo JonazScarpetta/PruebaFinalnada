@@ -20,7 +20,9 @@ const etiquetaNombre = document.createElement("h3"); // crear Elemento
 let textoNombre = document.createTextNode(usuario.nombre); //crear el texto
 etiquetaNombre.appendChild(textoNombre); // uniendo texto con etiqueta
 contenedorNombre.appendChild(etiquetaNombre); // uniendo el contenedor don el texto
+
 //apellido
+
 const contenedorApellido = document.getElementById("apellido-ingreso");
 const etiquetaApellido = document.createElement("h3"); // crear Elemento
 
@@ -30,21 +32,21 @@ contenedorApellido.appendChild(etiquetaApellido); // uniendo el contenedor don e
 
 // celular
 
-const contenedor1 = document.getElementById("numero-celular");
-const texto1 = document.createElement("h4"); // crear Elemento
+const contenedorCelular = document.getElementById("numero-celular");
+const etiquetaCelular = document.createElement("h4"); // crear Elemento
 
-numeroCelular = document.createTextNode("3233052419"); //crear el texto
-texto1.appendChild(numeroCelular); // uniendo texto con etiqueta
-contenedor1.appendChild(texto1); // uniendo el contenedor don el texto
+let textoCelular = document.createTextNode(usuario.celular); //crear el texto
+etiquetaCelular.appendChild(textoCelular); // uniendo texto con etiqueta
+contenedorCelular.appendChild(etiquetaCelular); // uniendo el contenedor don el texto
 
 // correo
 
-const contenedor2 = document.getElementById("correo-ingreso");
-const texto2 = document.createElement("h4"); // crear Elemento
+const contenedorCorreo = document.getElementById("correo-ingreso");
+const etiquetaCorreo = document.createElement("h4"); // crear Elemento
 
-correoIngreso = document.createTextNode("tecnimundoseguridad@gmail.com"); //crear el texto
-texto2.appendChild(correoIngreso); // uniendo texto con etiqueta
-contenedor2.appendChild(texto2); // uniendo el contenedor don el texto
+let textoCorreo = document.createTextNode(usuario.correo); //crear el texto
+etiquetaCorreo.appendChild(textoCorreo); // uniendo texto con etiqueta
+contenedorCorreo.appendChild(etiquetaCorreo); // uniendo el contenedor don el texto
 
 // descripcion si es usuario autroizado o registro
 
