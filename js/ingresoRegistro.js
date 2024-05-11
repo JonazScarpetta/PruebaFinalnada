@@ -6,7 +6,7 @@
 // contenedor.appendChild(texto); // uniendo el contenedor don el texto
 
 const usuario = {
-  nombre: "Luisa Fernanda ",
+  nombre: "Lucila ",
   apellido: "Valbuena",
   correo: "soporte.tecnico@gmail.com",
   celular: 34132976801,

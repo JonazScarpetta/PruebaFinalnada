@@ -23,41 +23,808 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header
-      class="container-sm fondo mx-auto p-5 mt-5 mb-5 bg-primary text-center text-white border border-primary-subtle border-5 rounded-4"
-      style="width: 250px"
-    >
-      <h1>AlturaAPP</h1>
-    </header>
-    <section class="container-sm fondo mx-auto p-3 mt-3 mb-3 text-center">
-      <article><h2>Usuario de Registro</h2></article>
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="btn-iniciar-sesion-registro"
-      >
-        <a class="text-white" href="/html/iniciar-sesion-registro.html"
-          >Iniciar Sesion</a
+    <!-- inicio formulario -->
+
+    <div class="container ">
+      <h5 class="bg-primary text-white">Ubicacion donde se realizara la actividad</h5>
+      <div class="mb-3">
+  <h6 class="d-inline mr-5 ">Ciudad:</h6>
+  <p class="d-inline text-bg-info">Bogotá</p>
+</div>
+
+      <div class="mb-3">
+        <h6 class="d-inline mr-5 bg">Direccion:</h6>
+  <p class="d-inline text-bg-info">Calle 68a # 80-34</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="d-inline mr-5">Fecha Inicio Actividad:</h6>
+  <p class="d-inline text-bg-info">17/05/2024</p>
+      </div>
+      <div class="mb-3">
+      <h6 class="d-inline mr-5">Fecha de Culminacion de actividad:</h6>
+  <p class="d-inline text-bg-info">17/06/2024</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="d-inline mr-5">Hora de inicio de Actividad:</h6>
+  <p class="d-inline text-bg-info">09:54 am</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="d-inline mr-5">Hora de inicio de Actividad:</h6>
+  <p class="d-inline text-bg-info">09:54 am</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="d-inline mr-5">Altura Actividad (en metros):</h6>
+  <p class="d-inline text-bg-info">2,51</p>
+      </div>
+
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="actividad-rutinaria"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >¿Es una Actividad Rutinaria?</label
         >
-      </button>
-    </section>
-    <section class="container-sm fondo mx-auto p-3 mt-3 mb-3 text-center">
-      <article><h2>Usuario de Autorizacion</h2></article>
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="btn-iniciar-sesion-autorizacion"
-      >
-        <a class="text-white" href="/html/iniciar-sesion-autorizador.html"
-          >Iniciar Sesion</a
-        >
-      </button>
-    </section>
-    <section class="container-sm fondo mx-auto p-4 mt-4 mb-4 text-center">
-      <button type="button" id="btn-nuevo-usuario" class="btn btn-primary">
-        <a class="text-white" href="/html/registro.html">Nuevo Usuario</a>
-      </button>
-    </section>
+      </div>
+      <div class="mb-3">
+        <h6 class="d-inline mr-5">Descripcion y Procedimiento de tarea:</h6>
+  <p class="d-inline text-bg-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quas nisi nobis maxime, doloremque sint dolor minus laboriosam eaque repellendus maiores sed totam ducimus facere enim nihil modi provident harum!Lorem</p>
+      </div>
+      <br />
+      <h5>Elementos de Proteccion Personal</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check1"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Casco con barbuquejo de tres o cuatro puntos de fijación
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check2"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Gafas de seguridad
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check3"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Protector respiratorio
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check4"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Protectores auditivos
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check5"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Guantes de nitrilo de precisión
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check6"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Guantes de vaqueta.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check7"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Guantes de dieléctricos
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check8"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Botas de seguridad caña baja
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check9"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Traje u overol
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check10"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Arnés de 4 argollas
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon3-check11"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Arnés de 5 argollas
+        </label>
+      </div>
+      <br />
+      <h5>Actividades Criticas de Alto Riesgo a Realizar</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon4-check1"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Trabajos en alturas
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon4-check2"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Trabajos en espacios confinados
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon4-check3"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Trabajos con energías peligrosas
+        </label>
+      </div>
+      <br />
+      <h5>Identificacion de Peligros</h5>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Biologia
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check1"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Presencia de virus, bacterias u hongos.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check2"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Presencia de animales, insectos u otros vectores.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Fisico
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check3"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Iluminación deficiente.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check4"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a ruido.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check5"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a altas temperaturas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check6"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a bajas temperaturas.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Locativo
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check7"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Caída de objetos.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check8"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Caídas al mismo nivel.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check9"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Caídas de diferente nivel (menor a 2 metros).
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check10"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Colapsos estructurales.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check11"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Malas condición de orden y aseo.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check12"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Superficies irregulares o con desnivel.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Electrico
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check13"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Cercanía a redes eléctricas con posible arco eléctrico.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check14"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Posible arco eléctrico.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Mecanico
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check15"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Contacto con partes en movimiento.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check16"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Manipulación de herramientas manuales.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check17"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Proyección de partículas (solidos o líquidos).
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Quimico
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check18"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Contacto con sustancias químicas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check19"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Presencia de gases y vapores
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check20"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a polvo y material particulado.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          BioMecanico
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check21"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Manipulación manual de cargas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check22"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Posturas inadecuadas o forzadas para realizar la tarea.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check23"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Movimientos repetitivos
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Naturales
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check24"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a lluvia.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check25"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a vientos fuertes.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check26"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Exposición a derrumbes o deslizamientos de tierra o masa.
+        </label>
+      </div>
+      <div container>
+        <div class="text-bg-info p-2 m-5 rounded-4 text-center mt-2 mb-2">
+          Tecnologicos
+        </div>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check27"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Presencia de fuentes de ignición de fuego.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check28"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Derrames, fugas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon5-check29"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Riesgo de explosión.
+        </label>
+      </div>
+      <br />
+      <h5>Sistemas de Restriccion y Posicionamiento</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check1"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Línea de vida vertical fija
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check2"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Línea de vida vertical portátil
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check3"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Línea de vida horizontal portátil
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check4"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Línea de vida horizontal fija
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check5"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Anclaje portátiles (Tie Off)
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check6"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Cintas de anclaje
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check7"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Conectores de transito vertical.
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check8"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Eslinga de restricción
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check9"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Eslinga de posicionamiento
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check10"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Eslinga de detención de caídas
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check11"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Eslinga de detención de caídas sencilla
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon6-check12"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Eslinga de detención de caídas con doble terminal (Y)
+        </label>
+      </div>
+      <br />
+      <h5>Medidas de Proteccion Contra Caidas</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon7-check1"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Delimitación del área
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon7-check2"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Barandas
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon7-check3"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Señalización
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon7-check4"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Línea de advertencia
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="acordeon7-check5"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Control acceso
+        </label>
+      </div>
+      <br />
+      <h5>Aprobacion y Validacion del Permiso</h5>
+      
+       <div class="mb-1 container">
+              <label class="form-label" for="cargo">Firma Residente SST:</label>
+              <div class="card" style="width: 18rem;">
+  <img src="/img/firma.jpg" class="card-img-top" alt="...">
+ 
+</div> </div>       
+
+
+
+
+
+
+<div class="mb-1 container">
+              <label class="form-label" for="cargo">Registro Fotografico:</label>
+              <div class="card" style="width: 18rem;">
+  <img src="/img/Paisaje1.jpg" class="card-img-top" alt="...">
+  
+</div>
+            </div>
+    
+      
+                  <div class="mb-1 container"><label class="form-label" for="documento"
+              >Personal que Realizara la Actividad:</label
+            ><p class="d-inline text-bg-info">Jean </p><p class="d-inline text-bg-info">Diaz</p>
+            </div><div class="mb-1 container"><label class="form-label" for="documento"
+              >Personal que Autorizara la Actividad:</label
+            >
+            <p class="d-inline text-bg-info">Joseph</p><p class="d-inline text-bg-info">Peña</p>
+            </div></div>
+            
+           
+          </div></div>
+
+      <!-- final de formulario -->
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
