@@ -1,76 +1,132 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Crear el encabezado
-  var header = document.createElement("header");
-  header.classList.add(
-    "container-sm",
-    "fondo",
-    "mx-auto",
-    "p-5",
-    "mt-5",
-    "mb-5",
-    "bg-primary",
-    "text-center",
-    "text-white",
-    "border",
-    "border-primary-subtle",
-    "border-5",
-    "rounded-4"
-  );
-  header.style.width = "250px";
-  var headerTitle = document.createElement("h1");
-  headerTitle.appendChild(document.createTextNode("AlturaAPP"));
-  header.appendChild(headerTitle);
-  document.body.appendChild(header);
+// const usuario = {
+//   nombre: "Lucila ",
+//   // apellido: "Valbuena",
+//   // correo: "soporte.tecnico@gmail.com",
+//   // celular: 34132976801,
+// };
 
-  // Crear la sección de usuario de Registro
-  var sectionRegistro = createSection(
-    "Usuario de Registro",
-    "/html/iniciar-sesion-registro.html"
-  );
-  document.body.appendChild(sectionRegistro);
+// //Nombre
 
-  // Crear la sección de usuario de Autorización
-  var sectionAutorizacion = createSection(
-    "Usuario de Autorización",
-    "/html/iniciar-sesion-autorizador.html"
-  );
-  document.body.appendChild(sectionAutorizacion);
+// const contenedorNombre = document.getElementById("nombre-ingreso");
+// const etiquetaNombre = document.createElement("h3"); // crear Elemento
 
-  // Crear la sección de Nuevo Usuario
-  var sectionNuevoUsuario = createSection(
-    "Nuevo Usuario",
-    "/html/registro.html"
-  );
-  document.body.appendChild(sectionNuevoUsuario);
+// let textoNombre = document.createTextNode(usuario.nombre); //crear el texto
+// etiquetaNombre.appendChild(textoNombre); // uniendo texto con etiqueta
+// contenedorNombre.appendChild(etiquetaNombre); // uniendo el contenedor don el texto
+
+//apellido
+
+// const contenedorApellido = document.getElementById("apellido-ingreso");
+// const etiquetaApellido = document.createElement("h3"); // crear Elemento
+
+// let textoApellido = document.createTextNode(usuario.apellido); //crear el texto
+// etiquetaApellido.appendChild(textoApellido); // uniendo texto con etiqueta
+// contenedorApellido.appendChild(etiquetaApellido); // uniendo el contenedor don el texto
+
+// // celular
+
+// const contenedorCelular = document.getElementById("numero-celular");
+// const etiquetaCelular = document.createElement("h4"); // crear Elemento
+
+// let textoCelular = document.createTextNode(usuario.celular); //crear el texto
+// etiquetaCelular.appendChild(textoCelular); // uniendo texto con etiqueta
+// contenedorCelular.appendChild(etiquetaCelular); // uniendo el contenedor don el texto
+
+// // correo
+
+// const contenedorCorreo = document.getElementById("correo-ingreso");
+// const etiquetaCorreo = document.createElement("h4"); // crear Elemento
+
+// let textoCorreo = document.createTextNode(usuario.correo); //crear el texto
+// etiquetaCorreo.appendChild(textoCorreo); // uniendo texto con etiqueta
+// contenedorCorreo.appendChild(etiquetaCorreo); // uniendo el contenedor don el texto
+// prueba
+
+// // icono check list
+// const contenedorPrueba = document.getElementById("prueba1");
+// contenedorPrueba.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+//   <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+//   <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+// </svg>`;
+
+
+
+  // firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyBOZZcTZPW7RoDGyrw7ZyoyayldwEfYtbQ",
+    authDomain: "crud-proyectofinal.firebaseapp.com",
+    projectId: "crud-proyectofinal",
+    storageBucket: "crud-proyectofinal.appspot.com",
+    messagingSenderId: "425385465093",
+    appId: "1:425385465093:web:94460f496253200b48d36c",
+  };
+// visualiozacion datos prueba
+const trabajadorDatos = document.getElementById("enviar-inf-trabajador");
+
+trabajadorDatos.addEventListener("click", function () {
+  const impresionTrabajadorDatos = {};
+
+  impresionTrabajadorDatos.nombrePT =
+    document.getElementById("nombre-pt").value;
+
+  impresionTrabajadorDatos.apellidoPT =
+    document.getElementById("apellido-pt").value;
+
+  impresionTrabajadorDatos.seleccionDocumentoTrabajador =
+    document.getElementById("seleccion-documento-trabajador").value;
+
+  impresionTrabajadorDatos.numeroDocumentoTrabajadorPT =
+    document.getElementById("numero-documento-trabajador-pt").value;
+  impresionTrabajadorDatos.cargoPT = document.getElementById("cargo-pt").value;
+
+  impresionTrabajadorDatos.numeroCelularTrabajador = document.getElementById(
+    "numero-de-celular-trabajador"
+  ).value;
+
+  // impresionTrabajadorDatos.contactoEmergencia = document.getElementById(
+  //   "contacto-emergencia"
+  // ).value;
+  // impresionTrabajadorDatos.numeroCelularEmergencia = document.getElementById(
+  //   "numero-celular-emergencia"
+  // ).value;
+  // impresionTrabajadorDatos.planillaSeguridadSocial = document.getElementById(
+  //   "planilla-seguridad-social"
+  // ).value;
+  // impresionTrabajadorDatos.fechaVencimientoPlanilla = document.getElementById(
+  //   "fecha-vencimiento-planilla"
+  // ).value;
+  // impresionTrabajadorDatos.cursoAlturas =
+  //   document.getElementById("curso-alturas").value;
+  // impresionTrabajadorDatos.fechaVencimientoCursoAlturas =
+  //   document.getElementById("fecha-vencimiento-curso-alturas").value;
+  // impresionTrabajadorDatos.examenMedico =
+  //   document.getElementById("examen-medico").value;
+  // impresionTrabajadorDatos.fechaVencimientoExamenMedico =
+  //   document.getElementById("fecha-vencimiento-examen-medico").value;
+  // impresionTrabajadorDatos.nombreArl =
+  //   document.getElementById("nombre-arl").value;
+  // impresionTrabajadorDatos.nombreEps =
+  //   document.getElementById("nombre-eps").value;
+  // impresionTrabajadorDatos.nombreFondoPensiones = document.getElementById(
+  //   "nombre-fondo-pensiones"
+  // ).value;
+  // impresionTrabajadorDatos.registroFotograficoTrabajador =
+  //   document.getElementById("registro-fotografico-trabajador").value;
+  // impresionTrabajadorDatos.firmaDigitalTrabajador = document.getElementById(
+  //   "firma-digital-trabajador"
+  // ).value;
+
+  console.log(impresionTrabajadorDatos);
 });
-
-function createSection(title, link) {
-  var section = document.createElement("section");
-  section.classList.add(
-    "container-sm",
-    "fondo",
-    "mx-auto",
-    "p-3",
-    "mt-3",
-    "mb-3",
-    "text-center"
-  );
-
-  var article = document.createElement("article");
-  var articleTitle = document.createElement("h2");
-  articleTitle.appendChild(document.createTextNode(title));
-  article.appendChild(articleTitle);
-  section.appendChild(article);
-
-  var button = document.createElement("button");
-  button.type = "button";
-  button.classList.add("btn", "btn-primary");
-  var buttonLink = document.createElement("a");
-  buttonLink.classList.add("text-white");
-  buttonLink.href = link;
-  buttonLink.appendChild(document.createTextNode("Iniciar Sesión"));
-  button.appendChild(buttonLink);
-  section.appendChild(button);
-
-  return section;
-}
+const studentRef = firebase.database().ref("estudents");
+const registerStudent = studentRef.push();
+registerStudent.set({
+  Uid: registerStudent.path.pieces_[1],
+  Nombre: impresionTrabajadorDatos.nombrePT,
+  Apellido: impresionTrabajadorDatos.apellidoPT,
+  Seleccion_documento_trabajador:
+    impresionTrabajadorDatos.seleccionDocumentoTrabajador,
+  Numero_Documento_Trabajador:
+    impresionTrabajadorDatos.numeroDocumentoTrabajadorPT,
+  Numero_Celular_trabajador: impresionTrabajadorDatos.numeroCelularTrabajador,
+});
