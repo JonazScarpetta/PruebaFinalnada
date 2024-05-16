@@ -5,8 +5,25 @@
 // texto.appendChild(ejTexto); // uniendo texto con etiqueta
 // contenedor.appendChild(texto); // uniendo el contenedor don el texto
 
+// inicio De codigo firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const baseDatos = firebase.firestore();
+
+// fin de codigo firebase
+
 const usuario = {
-  nombre: "Lucila ",
+  nombre: "jonathan ",
   apellido: "Valbuena",
   correo: "soporte.tecnico@gmail.com",
   celular: 34132976801,

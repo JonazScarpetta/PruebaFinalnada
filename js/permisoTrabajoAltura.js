@@ -57,6 +57,23 @@
 
 // enviar informacion formulario trabajo Alturas
 
+//inicio de codigo firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const baseDatos = firebase.firestore();
+
+// fin de codigo firebase
+
 const formularioDatosTrabajoAltura = document.getElementById(
   "enviar-datos-trabajo-alturas"
 );
@@ -225,4 +242,17 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
     document.getElementById("seleccion-autorizador-alturas").value;
 
   console.log(impresionFormularioTrabajoAltura);
+
+  baseDatos
+    .collection("formulaTrabajoAlturas")
+    .add({
+      impresionFormularioTrabajoAltura,
+    })
+    .then((docRef) => {
+      alert("Datos Guardados correctamente");
+    })
+    .catch((error) => {
+      alert("Error");
+      console.error(error);
+    });
 });

@@ -1,3 +1,20 @@
+// inicio De codigo firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const baseDatos = firebase.firestore();
+
+// fin de codigo firebase
+
 const formularioDatosAts = document.getElementById("enviar-datos-ats");
 formularioDatosAts.addEventListener("click", function () {
   const impresionFormularioAts = {};
@@ -79,4 +96,17 @@ formularioDatosAts.addEventListener("click", function () {
   ).value;
 
   console.log(impresionFormularioAts);
+
+  baseDatos
+    .collection("permisoATS")
+    .add({
+      impresionFormularioAts,
+    })
+    .then((docRef) => {
+      alert("Datos Guardados correctamente");
+    })
+    .catch((error) => {
+      alert("Error");
+      console.error(error);
+    });
 });
