@@ -1,69 +1,49 @@
-// inicio De codigo firebase
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
-  authDomain: "bd-appconnet.firebaseapp.com",
-  projectId: "bd-appconnet",
-  storageBucket: "bd-appconnet.appspot.com",
-  messagingSenderId: "749439432233",
-  appId: "1:749439432233:web:861541de33ed615b9fce38",
+const visualizacionFormularioAts = {
+  desProTarAts:
+    "Descripcion y procedimiento tarea hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj yyyyyyyyyyy",
+  TipoHerramientaAts: "electrica",
+  descripcionHerramientaAts: "RRRRRRRRRRRRRRRRRRRRRRRRRR descripcion",
+  escaleraSencillaAts: "verdad",
+  escaleraDobleAts: "falso",
+  escaleraTijeraAts: "verdad",
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const baseDatos = firebase.firestore();
+// Descripcion y procedimiento tarea
 
-// fin de codigo firebase
+const contenedorDesProTarAts = document.getElementById("desProTarAts");
+contenedorDesProTarAts.textContent = visualizacionFormularioAts.desProTarAts;
 
-const visualizacionFormularioATS = {
-  desProTarATS:
-    "pendiente por descripcion de este campo proveniente de la base de datos creada en fire base ",
-  prueba: "pruebas",
-  // apellidoTA: "Valbuena",
-  // correoTA: "soporte.tecnico@gmail.com",
-  // celularTA: 34132976801,
-};
+//tipo de herramienta
 
-// inicio traer dato
+const contenedorTipoHeramienta = document.getElementById("tipoHerranientaAts");
+contenedorTipoHeramienta.textContent =
+  visualizacionFormularioAts.TipoHerramientaAts;
 
-// baseDatos
-//   .collection("trabajagorAutorizado")
-//   .get()
-//   .then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       console.log(doc.data());
-//     });
-//   });
+// descripcion de la herramienta
 
-// baseDatos
-//   .collection("trabajagorAutorizado")
-//   .where("numeroDocumentoTrabajadorPT==20654798")
-//   .limit(1)
-//   .get()
-//   .then((querySnapshot) => {
-//     if (!querySnapshot.empty) {
-//       querySnapshot.forEach((doc) => {
-//         console.log(doc.data());
-//       });
-//     } else {
-//       console.log("no se encontro el documento");
-//     }
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+const contenedorDescripcionHerramientaAts = document.getElementById(
+  "descripcionHerramientaAts"
+);
+contenedorDescripcionHerramientaAts.textContent =
+  visualizacionFormularioAts.descripcionHerramientaAts;
 
-//descripcion y procedimiento de tarea
+// escalera sencilla
 
-const contenedorDesProTarATS = document.getElementById("desProTaraTS");
-contenedorDesProTarATS.textContent = visualizacionFormularioATS.desProTarATS;
+const contenedorEscaleraSencillaAts = document.getElementById(
+  "escaleraSencillaAts"
+);
+contenedorEscaleraSencillaAts.textContent =
+  visualizacionFormularioAts.escaleraSencillaAts;
 
-// //apellido
+// escalera Doble
 
-const contenedorPruebaATS = document.getElementById("prueba");
-contenedorPruebaATS.textContent = visualizacionFormularioATS.prueba;
+const contenedorEscaleraDobleAts = document.getElementById("escaleraDobleAts");
+contenedorEscaleraDobleAts.textContent =
+  visualizacionFormularioAts.escaleraDobleAts;
 
-// celular
+// escalera Tijera
 
-// const contenedorCelularTA = document.getElementById("celularTA");
-// contenedorCelularTA.textContent = visualizacionFormularioATS.celularTA;
+const contenedorEscaleraTijeraAts =
+  document.getElementById("escaleraTijeraAts");
+contenedorEscaleraTijeraAts.textContent =
+  visualizacionFormularioAts.escaleraTijeraAts;
