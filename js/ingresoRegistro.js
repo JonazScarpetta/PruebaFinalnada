@@ -23,7 +23,7 @@ const baseDatos = firebase.firestore();
 // fin de codigo firebase
 
 const usuario = {
-  nombre: "jonathan ",
+  nombre: "Jean ",
   apellido: "Valbuena",
   correo: "soporte.tecnico@gmail.com",
   celular: 34132976801,

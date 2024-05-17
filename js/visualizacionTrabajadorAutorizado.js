@@ -16,17 +16,18 @@ const baseDatos = firebase.firestore();
 // fin de codigo firebase
 
 const usuarioTA = {
-  nombreTA: "Luis ",
+  nombreTA: "Jean ",
   apellidoTA: "Valbuena",
   correoTA: "soporte.tecnico@gmail.com",
   celularTA: 34132976801,
   tipoDocumentoTA: "cedula",
   numeroDocumentoTA: "80927548",
   cargoTA: "Soldador",
-  infEmeTA: "luisa Valbuena",
+  conEmeTA: "luisa Valbuena",
   celInfEmeTA: "3233052419",
   planillaTA: "link planilla",
   venPlanillaTA: "05/06/2024",
+  curAlturasTA: "link Curso Alturas",
 };
 
 // inicio traer dato
@@ -61,61 +62,33 @@ const usuarioTA = {
 //Nombre
 
 const contenedorNombreTA = document.getElementById("nombreTA");
-
 contenedorNombreTA.textContent = usuarioTA.nombreTA;
-// const etiquetaNombreTA = document.createElement("h5"); // crear Elemento
-
-// let textoNombreTA = document.createTextNode(usuarioTA.nombreTA); //crear el texto
-// etiquetaNombreTA.appendChild(textoNombreTA); // uniendo texto con etiqueta
-// contenedorNombreTA.appendChild(etiquetaNombreTA); // uniendo el contenedor don el texto
 
 //apellido
 
 const contenedorApellidoTA = document.getElementById("apellidoTA");
-const etiquetaApellidoTA = document.createElement("h5"); // crear Elemento
-
-let textoApellidoTA = document.createTextNode(usuarioTA.apellidoTA); //crear el texto
-etiquetaApellidoTA.appendChild(textoApellidoTA); // uniendo texto con etiqueta
-contenedorApellidoTA.appendChild(etiquetaApellidoTA); // uniendo el contenedor don el texto
+contenedorApellidoTA.textContent = usuarioTA.apellidoTA;
 
 // celular
 
 const contenedorCelularTA = document.getElementById("celularTA");
-const etiquetaCelularTA = document.createElement("h5"); // crear Elemento
-
-let textoCelularTA = document.createTextNode(usuarioTA.celularTA); //crear el texto
-etiquetaCelularTA.appendChild(textoCelularTA); // uniendo texto con etiqueta
-contenedorCelularTA.appendChild(etiquetaCelularTA); // uniendo el contenedor don el texto
+contenedorCelularTA.textContent = usuarioTA.celularTA;
 
 // correo
 
 const contenedorCorreoTA = document.getElementById("correoTA");
-const etiquetaCorreoTA = document.createElement("h5"); // crear Elemento
-
-let textoCorreoTA = document.createTextNode(usuarioTA.correoTA); //crear el texto
-etiquetaCorreoTA.appendChild(textoCorreoTA); // uniendo texto con etiqueta
-contenedorCorreoTA.appendChild(etiquetaCorreoTA); // uniendo el contenedor don el texto
+contenedorCorreoTA.textContent = usuarioTA.correoTA;
 
 // tipo documento
 
 const contenedorTipoDocumentoTA = document.getElementById("tipoDocumentoTA");
-const etiquetaTipoDocumentoTA = document.createElement("h5"); // crear Elemento
-
-let textoTipoDocumentoTA = document.createTextNode(usuarioTA.tipoDocumentoTA); //crear el texto
-etiquetaTipoDocumentoTA.appendChild(textoTipoDocumentoTA); // uniendo texto con etiqueta
-contenedorTipoDocumentoTA.appendChild(etiquetaTipoDocumentoTA); // uniendo el contenedor don el texto
+contenedorTipoDocumentoTA.textContent = usuarioTA.tipoDocumentoTA;
 
 // numero documento
 
 const contenedorNumeroDocumentoTA =
   document.getElementById("numeroDocumentoTA");
-const etiquetaNumeroDocumentoTA = document.createElement("h5"); // crear Elemento
-
-let textoNumeroDocumentoTA = document.createTextNode(
-  usuarioTA.numeroDocumentoTA
-); //crear el texto
-etiquetaNumeroDocumentoTA.appendChild(textoNumeroDocumentoTA); // uniendo texto con etiqueta
-contenedorNumeroDocumentoTA.appendChild(etiquetaNumeroDocumentoTA); // uniendo el contenedor don el texto
+contenedorNumeroDocumentoTA.textContent = usuarioTA.numeroDocumentoTA;
 
 // Cargo
 
@@ -126,16 +99,12 @@ let textoCargoTA = document.createTextNode(usuarioTA.cargoTA); //crear el texto
 etiquetaCargoTA.appendChild(textoCargoTA); // uniendo texto con etiqueta
 contenedorCargoTA.appendChild(etiquetaCargoTA); // uniendo el contenedor don el texto
 
-//Informacion Emergencia
+//Contacto Emergencia
 
-const contenedorInfEmeTA = document.getElementById("infEmeTA");
-const etiquetaInfEmeTA = document.createElement("h5"); // crear Elemento
+const contenedorConEmeTA = document.getElementById("conEmeTA");
+contenedorConEmeTA.textContent = usuarioTA.conEmeTA;
 
-let textoinfEmeTA = document.createTextNode(usuarioTA.infEmeTA); //crear el texto
-etiquetaInfEmeTA.appendChild(textoinfEmeTA); // uniendo texto con etiqueta
-contenedorInfEmeTA.appendChild(etiquetaInfEmeTA); // uniendo el contenedor don el texto
-
-//Informacion Emergencia
+//Celular Contacto Emergencia
 
 const contenedorCelInfEmeTA = document.getElementById("celInfEmeTA");
 const etiquetaCelInfEmeTA = document.createElement("h5"); // crear Elemento
@@ -161,3 +130,8 @@ const etiquetaVenPlanillaTA = document.createElement("h5"); // crear Elemento
 let textoVenPlanillaTA = document.createTextNode(usuarioTA.venPlanillaTA); //crear el texto
 etiquetaVenPlanillaTA.appendChild(textoVenPlanillaTA); // uniendo texto con etiqueta
 contenedorVenPlanillaTA.appendChild(etiquetaVenPlanillaTA); // uniendo el contenedor don el texto
+
+// Curos de Alturas
+
+const contenedorCurAlturasTA = document.getElementById("curAlturasTA");
+contenedorCurAlturasTA.textContent = usuarioTA.curAlturasTA;
