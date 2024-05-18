@@ -22,32 +22,44 @@ const baseDatos = firebase.firestore();
 
 // fin de codigo firebase
 
-const usuario = {
-  nombre: "Jean ",
-  apellido: "Valbuena",
+let usuario = {
+  nombre: "........ ",
+  apellido: "gfdgh",
   correo: "soporte.tecnico@gmail.com",
   celular: 34132976801,
   tipoDocumento: "cedula",
   numeroDocumento: "80927548",
 };
+// nombre;
+const nombreIngreso = document.getElementById("nombreIngreso");
 
-//Nombre
-
-const contenedorNombre = document.getElementById("nombre-ingreso");
-const etiquetaNombre = document.createElement("h6"); // crear Elemento
-
-let textoNombre = document.createTextNode(usuario.nombre); //crear el texto
-etiquetaNombre.appendChild(textoNombre); // uniendo texto con etiqueta
-contenedorNombre.appendChild(etiquetaNombre); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorNombreTA.textContent = usuario.nombrePaginaRegistro;
+      }
+    });
+  });
 
 //apellido
 
-const contenedorApellido = document.getElementById("apellido-ingreso");
-const etiquetaApellido = document.createElement("h6"); // crear Elemento
+const apellidoIngreso = document.getElementById("apellidoIngreso");
 
-let textoApellido = document.createTextNode(usuario.apellido); //crear el texto
-etiquetaApellido.appendChild(textoApellido); // uniendo texto con etiqueta
-contenedorApellido.appendChild(etiquetaApellido); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        apellidoIngreso.textContent = usuario.apellidoPaginaRegistro;
+      }
+    });
+  });
 
 // celular
 

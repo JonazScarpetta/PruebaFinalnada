@@ -15,8 +15,8 @@ const baseDatos = firebase.firestore();
 
 // fin de codigo firebase
 
-const usuarioTA = {
-  nombreTA: "Jean ",
+let usuarioTA = {
+  nombrePT: "..... ",
   apellidoTA: "Valbuena",
   correoTA: "soporte.tecnico@gmail.com",
   celularTA: 34132976801,
@@ -61,8 +61,22 @@ const usuarioTA = {
 
 //Nombre
 
+// const contenedorNombreTA = document.getElementById("nombreTA");
+// contenedorNombreTA.textContent = usuarioTA.nombreTA;
+
 const contenedorNombreTA = document.getElementById("nombreTA");
-contenedorNombreTA.textContent = usuarioTA.nombreTA;
+
+baseDatos
+  .collection("trabajagorAutorizado")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
+        usuarioTA = doc.data().impresionTrabajadorDatos;
+        contenedorNombreTA.textContent = usuarioTA.nombrePT;
+      }
+    });
+  });
 
 //apellido
 
