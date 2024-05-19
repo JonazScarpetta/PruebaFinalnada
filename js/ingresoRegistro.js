@@ -24,11 +24,11 @@ const baseDatos = firebase.firestore();
 
 let usuario = {
   nombre: "........ ",
-  apellido: "gfdgh",
-  correo: "soporte.tecnico@gmail.com",
-  celular: 34132976801,
-  tipoDocumento: "cedula",
-  numeroDocumento: "80927548",
+  apellido: ".......",
+  correo: ".......",
+  celular: "........",
+  tipoDocumento: ".............",
+  numeroDocumento: "..........",
 };
 // nombre;
 const nombreIngreso = document.getElementById("nombreIngreso");
@@ -40,7 +40,7 @@ baseDatos
     querySnapshot.forEach((doc) => {
       if (doc.id == "ZTd5MhN223IGe4jHJr02") {
         usuario = doc.data().paginaRegistroingreso;
-        contenedorNombreTA.textContent = usuario.nombrePaginaRegistro;
+        nombreIngreso.textContent = usuario.nombrePaginaRegistro;
       }
     });
   });
@@ -63,12 +63,18 @@ baseDatos
 
 // celular
 
-const contenedorCelular = document.getElementById("numero-celular");
-const etiquetaCelular = document.createElement("h6"); // crear Elemento
-
-let textoCelular = document.createTextNode(usuario.celular); //crear el texto
-etiquetaCelular.appendChild(textoCelular); // uniendo texto con etiqueta
-contenedorCelular.appendChild(etiquetaCelular); // uniendo el contenedor don el texto
+const celularIngreso = document.getElementById("celularIngreso");
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        celularIngreso.textContent = usuario.numeroTelefonico;
+      }
+    });
+  });
 
 // correo
 
