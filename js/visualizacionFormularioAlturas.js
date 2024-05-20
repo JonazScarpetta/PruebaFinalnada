@@ -19,6 +19,11 @@ let visualizacionFormularioAlturas = {
   ciudadTA: ".......",
   fechaInicioTA: ".......",
   fechaCulminacionTA: ".......",
+  fechaCulminacionActividad: "......",
+  direccionTrabajoAltura: "......",
+  horaInicioActividad: "......",
+  horaCulminacionActividad: "......",
+  actividadRutinaria: "......",
 };
 
 // Ciudad
@@ -33,11 +38,27 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "dsYLqi4tqMdldAM7sIrb") {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
         visualizacionFormularioAlturas =
           doc.data().impresionFormularioTrabajoAltura;
         contenedorCiudadTA.textContent =
           visualizacionFormularioAlturas.ciudadTrabajoAltura;
+      }
+    });
+  });
+
+// Direccion
+
+const contenedorDireccionTA = document.getElementById("direccionTrabajoAltura");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorDireccionTA.textContent = usuarioTA.direccionTrabajoAltura;
       }
     });
   });
@@ -52,7 +73,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "dsYLqi4tqMdldAM7sIrb") {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorFechaInicioTA.textContent = usuarioTA.fechaInicioActividad;
       }
@@ -61,7 +82,71 @@ baseDatos
 
 // Fecha Culminacion Actividad
 
-const contenedorFechaCulminacionTA =
-  document.getElementById("fechaCulminacionTA");
-contenedorFechaCulminacionTA.textContent =
-  visualizacionFormularioAlturas.fechaCulminacionTA;
+const contenedorCulminacionTA = document.getElementById("fechaCulminacionTA");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorCulminacionTA.textContent =
+          usuarioTA.fechaCulminacionActividad;
+      }
+    });
+  });
+
+// Hora Inicio Actividad
+
+const contenedorHoraInicioTA = document.getElementById("horaInicioActividad");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorHoraInicioTA.textContent = usuarioTA.horaInicioActividad;
+      }
+    });
+  });
+// Hora Culminacion Actividad
+
+const contenedorCulminacionInicioTA = document.getElementById(
+  "horaCulminacionActividad"
+);
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorCulminacionInicioTA.textContent =
+          usuarioTA.horaCulminacionActividad;
+      }
+    });
+  });
+
+//Altura de la actividad
+
+// Actividad Rutinaria
+
+const contenedorActividadRutinariaTA =
+  document.getElementById("actividadRutinaria");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorActividadRutinariaTA.textContent =
+          usuarioTA.actividadRutinaria;
+      }
+    });
+  });

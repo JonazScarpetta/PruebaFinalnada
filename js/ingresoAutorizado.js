@@ -1,67 +1,117 @@
-const usuario = {
-  nombre: "Jonathan",
-  apellido: "Lopez",
-  tipoDocumento: "cedula",
-  correo: "scarpetta_1985@gmail.com",
-  celular: 3142976801,
-  numeroDocumento: 80927548,
+// inicio De codigo firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const baseDatos = firebase.firestore();
+
+let usuario = {
+  nombrePaginaRegistro: "......",
+  apellidoPaginaRegistro: "......",
+  opcionDocumento: "......",
+  correoRegistro: "......",
+  numeroTelefonico: "......",
+  numeroIdentificacion: "......",
 };
 
 //Nombre
 
 const contenedorNombre = document.getElementById("nombre-ingresoA");
-const etiquetaNombre = document.createElement("h6"); // crear Elemento
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorNombre.textContent = usuario.nombrePaginaRegistro;
+      }
+    });
+  });
 
-let textoNombre = document.createTextNode(usuario.nombre); //crear el texto
-etiquetaNombre.appendChild(textoNombre); // uniendo texto con etiqueta
-contenedorNombre.appendChild(etiquetaNombre); // uniendo el contenedor don el texto
 //apellido
 const contenedorApellido = document.getElementById("apellido-ingresoA");
-const etiquetaApellido = document.createElement("h6"); // crear Elemento
-
-let textoApellido = document.createTextNode(usuario.apellido); //crear el texto
-etiquetaApellido.appendChild(textoApellido); // uniendo texto con etiqueta
-contenedorApellido.appendChild(etiquetaApellido); // uniendo el contenedor don el texto
-
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorApellido.textContent = usuario.apellidoPaginaRegistro;
+      }
+    });
+  });
 // celular
 
 const contenedorCelular = document.getElementById("numero-celularA");
-const etiquetaCelular = document.createElement("h6"); // crear Elemento
-
-let textoCelular = document.createTextNode(usuario.celular); //crear el texto
-etiquetaCelular.appendChild(textoCelular); // uniendo texto con etiqueta
-contenedorCelular.appendChild(textoCelular); // uniendo el contenedor don el texto
-
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorCelular.textContent = usuario.numeroTelefonico;
+      }
+    });
+  });
 // correo
 
 const contenedorCorreo = document.getElementById("correo-ingresoA");
-const etiquetaCorreo = document.createElement("h6"); // crear Elemento
-
-let textoCorreo = document.createTextNode(usuario.correo); //crear el texto
-etiquetaCorreo.appendChild(textoCorreo); // uniendo texto con etiqueta
-contenedorCorreo.appendChild(textoCorreo); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorCorreo.textContent = usuario.correoRegistro;
+      }
+    });
+  });
 
 // Tipo Documento
 
 const contenedorTipoDocumento = document.getElementById(
   "tipoDocumento-ingresoA"
 );
-const etiquetaTipoDocumento = document.createElement("h6"); // crear Elemento
-
-let textoTipoDocumento = document.createTextNode(usuario.tipoDocumento); //crear el texto
-etiquetaTipoDocumento.appendChild(textoTipoDocumento); // uniendo texto con etiqueta
-contenedorTipoDocumento.appendChild(textoTipoDocumento); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorTipoDocumento.textContent = usuario.opcionDocumento;
+      }
+    });
+  });
 
 // Numero Documento
 
 const contenedorNumeroDocumento = document.getElementById(
   "numeroDocumento-ingresoA"
 );
-const etiquetaNumeroDocumento = document.createElement("h6"); // crear Elemento
-
-let textoNumeroDocumento = document.createTextNode(usuario.numeroDocumento); //crear el texto
-etiquetaNumeroDocumento.appendChild(textoNumeroDocumento); // uniendo texto con etiqueta
-contenedorNumeroDocumento.appendChild(textoNumeroDocumento); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorNumeroDocumento.textContent = usuario.numeroIdentificacion;
+      }
+    });
+  });
 
 // descripcion si es usuario autroizado o registro
 

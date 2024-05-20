@@ -1,10 +1,3 @@
-// const contenedor = document.getElementById("prueba");
-// const texto = document.createElement("h1"); // crear Elemento
-
-// ejTexto = document.createTextNode("este es el ejemplo"); //crear el texto
-// texto.appendChild(ejTexto); // uniendo texto con etiqueta
-// contenedor.appendChild(texto); // uniendo el contenedor don el texto
-
 // inicio De codigo firebase
 
 const firebaseConfig = {
@@ -27,8 +20,8 @@ let usuario = {
   apellido: ".......",
   correo: ".......",
   celular: "........",
-  tipoDocumento: ".............",
-  numeroDocumento: "..........",
+  opcionDocumento: ".............",
+  numeroIdentificacion: "..........",
 };
 // nombre;
 const nombreIngreso = document.getElementById("nombreIngreso");
@@ -38,7 +31,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
         usuario = doc.data().paginaRegistroingreso;
         nombreIngreso.textContent = usuario.nombrePaginaRegistro;
       }
@@ -54,7 +47,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
         usuario = doc.data().paginaRegistroingreso;
         apellidoIngreso.textContent = usuario.apellidoPaginaRegistro;
       }
@@ -69,7 +62,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
         usuario = doc.data().paginaRegistroingreso;
         celularIngreso.textContent = usuario.numeroTelefonico;
       }
@@ -79,33 +72,50 @@ baseDatos
 // correo
 
 const contenedorCorreo = document.getElementById("correo-ingreso");
-const etiquetaCorreo = document.createElement("h6"); // crear Elemento
-
-let textoCorreo = document.createTextNode(usuario.correo); //crear el texto
-etiquetaCorreo.appendChild(textoCorreo); // uniendo texto con etiqueta
-contenedorCorreo.appendChild(etiquetaCorreo); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorCorreo.textContent = usuario.correoRegistro;
+      }
+    });
+  });
 
 // Tipo Documento
 
 const contenedorTipoDocumento = document.getElementById(
   "tipoDocumento-ingreso"
 );
-const etiquetaTipoDocumento = document.createElement("h6"); // crear Elemento
-
-let textoTipoDocumento = document.createTextNode(usuario.tipoDocumento); //crear el texto
-etiquetaTipoDocumento.appendChild(textoTipoDocumento); // uniendo texto con etiqueta
-contenedorTipoDocumento.appendChild(etiquetaTipoDocumento); // uniendo el contenedor don el texto
-
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorTipoDocumento.textContent = usuario.opcionDocumento;
+      }
+    });
+  });
 // Numero Documento Documento
 
 const contenedorNumeroDocumento = document.getElementById(
   "numeroDocumento-ingreso"
 );
-const etiquetaNumeroDocumento = document.createElement("h6"); // crear Elemento
-
-let textoNumeroDocumento = document.createTextNode(usuario.numeroDocumento); //crear el texto
-etiquetaNumeroDocumento.appendChild(textoNumeroDocumento); // uniendo texto con etiqueta
-contenedorNumeroDocumento.appendChild(etiquetaNumeroDocumento); // uniendo el contenedor don el texto
+baseDatos
+  .collection("usuario")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
+        usuario = doc.data().paginaRegistroingreso;
+        contenedorNumeroDocumento.textContent = usuario.numeroIdentificacion;
+      }
+    });
+  });
 
 // descripcion si es usuario autroizado o registro
 
