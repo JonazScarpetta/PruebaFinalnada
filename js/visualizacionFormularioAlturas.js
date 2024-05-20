@@ -133,6 +133,19 @@ baseDatos
 
 //Altura de la actividad
 
+const contenedorAlturaActividadTA = document.getElementById("alturaActividad");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorAlturaActividadTA.textContent = usuarioTA.alturaActividad;
+      }
+    });
+  });
 // Actividad Rutinaria
 
 const contenedorActividadRutinariaTA =
@@ -147,6 +160,76 @@ baseDatos
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorActividadRutinariaTA.textContent =
           usuarioTA.actividadRutinaria;
+      }
+    });
+  });
+
+// Descripcion y procedimiento de la tarea
+
+const contenedorDescripcionTareaTA =
+  document.getElementById("descripcionTarea");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorDescripcionTareaTA.textContent =
+          usuarioTA.descripcionProcedimientoTarea;
+      }
+    });
+  });
+
+// Casco Burbuquejo
+
+const contenedorCascoBurbuquejoTA =
+  document.getElementById("cascoBurbuquejoAt");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorCascoBurbuquejoTA.textContent = usuarioTA.cascoBurbuquejoAt;
+      }
+    });
+  });
+
+// Gafas de Seguridad
+
+const contenedorGafasSeguridadTA = document.getElementById("gafasSeguridadAt");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorGafasSeguridadTA.textContent = usuarioTA.gafasSeguridadAt;
+      }
+    });
+  });
+
+// Protector Respiratorio
+
+const contenedorProtectorRespiratorioTA = document.getElementById(
+  "protectorRespiratorioAt"
+);
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorProtectorRespiratorioTA.textContent =
+          usuarioTA.protectorRespiratorioAt;
       }
     });
   });

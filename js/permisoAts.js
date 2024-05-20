@@ -20,7 +20,7 @@ formularioDatosAts.addEventListener("click", function () {
   const impresionFormularioAts = {};
 
   impresionFormularioAts.descripcionProcedimientoTarea =
-    document.getElementById("descripcion-procedimiento-tarea").value;
+    document.getElementById("descripcionHerramienta").value;
   //acordeon 2
 
   impresionFormularioAts.tipoHerramienta =
