@@ -36,8 +36,8 @@ trabajadorDatos.addEventListener("click", function () {
     "numero-de-celular-trabajador"
   ).value;
 
-  impresionCorreoDatos.correoElectronicoTA = document.getElementById(
-    "correoElectronicoTA"
+  impresionTrabajadorDatos.correoElectronicoTA = document.getElementById(
+    "correo-Electronico-TA"
   ).value;
 
   impresionTrabajadorDatos.contactoEmergencia = document.getElementById(

@@ -16,6 +16,12 @@ const baseDatos = firebase.firestore();
 // Inicio datos formulario
 
 let visualizacionFormularioAts = {
+  ciudadTrabajoAltura: "......",
+  nombreObraTrAl: "......",
+  direccionTrabajoAltura: "......",
+  fechaInicioActividad: "......",
+  fechaCulminacionActividad: "......",
+
   desProTarAts: "......",
   tipoHerramienta: "......",
   descripcionHerramienta: "......",
@@ -39,7 +45,98 @@ let visualizacionFormularioAts = {
   registroFotograficoAts: "......",
   seleccionPersonalAts: "......",
   seleccionAutorizadorAts: "......",
+  ciudadTrabajoAltura: "......",
 };
+
+// Ciudad
+
+const contenedorCiudad = document.getElementById("ciudadTrabajoAltura");
+
+baseDatos
+  .collection("permisoATS")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "CwM5xHjBQBbOItOumue1") {
+        visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        contenedorCiudad.textContent =
+          visualizacionFormularioAts.ciudadTrabajoAltura;
+      }
+    });
+  });
+
+// Nombre Obra
+
+const contenedorNombreObra = document.getElementById("nombreObraTrAl");
+
+baseDatos
+  .collection("permisoATS")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "CwM5xHjBQBbOItOumue1") {
+        visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        contenedorNombreObra.textContent =
+          visualizacionFormularioAts.nombreObra;
+      }
+    });
+  });
+
+// Direccion Obra
+
+const contenedorDireccionObra = document.getElementById(
+  "direccionTrabajoAltura"
+);
+
+baseDatos
+  .collection("permisoATS")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "CwM5xHjBQBbOItOumue1") {
+        visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        contenedorDireccionObra.textContent =
+          visualizacionFormularioAts.direccionTrabajoAltura;
+      }
+    });
+  });
+
+// Fecha Inicio Actividad
+
+const contenedorInicioActividad = document.getElementById(
+  "fechaInicioActividad"
+);
+
+baseDatos
+  .collection("permisoATS")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "CwM5xHjBQBbOItOumue1") {
+        visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        contenedorInicioActividad.textContent =
+          visualizacionFormularioAts.fechaInicioActividad;
+      }
+    });
+  });
+// Fecha Fin Actividad
+
+const contenedorFinActividad = document.getElementById(
+  "fechaCulminacionActividad"
+);
+
+baseDatos
+  .collection("permisoATS")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "CwM5xHjBQBbOItOumue1") {
+        visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        contenedorFinActividad.textContent =
+          visualizacionFormularioAts.fechaCulminacionActividad;
+      }
+    });
+  });
 
 // Descripcion y procedimiento tarea
 

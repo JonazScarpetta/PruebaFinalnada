@@ -17,6 +17,7 @@ const baseDatos = firebase.firestore();
 
 let visualizacionFormularioAlturas = {
   ciudadTA: ".......",
+  ubicacionObra: "......",
   fechaInicioTA: ".......",
   fechaCulminacionTA: ".......",
   fechaCulminacionActividad: "......",
@@ -54,7 +55,7 @@ let visualizacionFormularioAlturas = {
   cercaniaRedesElectricasAt: "......",
   arcoElectricoAt: "......",
   contactoPartesMovimientoAt: "......",
-  manipulacionHerramientasManualesAt: "......",
+  // manipulacionHerramientasManualesAt: "......",
   proyeccionParticulasAt: "......",
   contactoSustanciasQuimicasAt: "......",
   PresenciaGasesVaporesAt: "......",
@@ -103,7 +104,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         visualizacionFormularioAlturas =
           doc.data().impresionFormularioTrabajoAltura;
         contenedorCiudadTA.textContent =
@@ -121,9 +122,25 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorDireccionTA.textContent = usuarioTA.direccionTrabajoAltura;
+      }
+    });
+  });
+
+// Ubicacion Obra
+
+const contenedorUbicacionObraTA = document.getElementById("ubicacionObra");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
+        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+        contenedorUbicacionObraTA.textContent = usuarioTA.nombreObra;
       }
     });
   });
@@ -138,7 +155,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorFechaInicioTA.textContent = usuarioTA.fechaInicioActividad;
       }
@@ -154,7 +171,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCulminacionTA.textContent =
           usuarioTA.fechaCulminacionActividad;
@@ -171,7 +188,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorHoraInicioTA.textContent = usuarioTA.horaInicioActividad;
       }
@@ -188,7 +205,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCulminacionInicioTA.textContent =
           usuarioTA.horaCulminacionActividad;
@@ -205,7 +222,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorAlturaActividadTA.textContent = usuarioTA.alturaActividad;
       }
@@ -222,7 +239,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorActividadRutinariaTA.textContent =
           usuarioTA.actividadRutinaria;
@@ -240,9 +257,10 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
-        contenedorDescripcionTareaTA.textContent = usuarioTA.descripcionTarea;
+        contenedorDescripcionTareaTA.textContent =
+          usuarioTA.descripcionProcedimientoTarea;
       }
     });
   });
@@ -257,7 +275,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCascoBurbuquejoTA.textContent = usuarioTA.cascoBurbuquejoAt;
       }
@@ -273,7 +291,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorGafasSeguridadTA.textContent = usuarioTA.gafasSeguridadAt;
       }
@@ -291,7 +309,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorProtectorRespiratorioTA.textContent =
           usuarioTA.protectorRespiratorioAt;
@@ -310,7 +328,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorProtectorAuditivoTA.textContent =
           usuarioTA.protectoresAuditivosAt;
@@ -328,7 +346,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorGuantesNitriloProteccionTA.textContent =
           usuarioTA.guantesNitriloAt;
@@ -345,7 +363,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorGuantesVaquetaTA.textContent = usuarioTA.guantesVaquetaAt;
       }
@@ -363,7 +381,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorGuantesDielectricosTA.textContent =
           usuarioTA.guantesDielectricosAt;
@@ -380,7 +398,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorBotaSeguridadTA.textContent = usuarioTA.botaSeguridadAt;
       }
@@ -396,7 +414,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorTrajeOverolTA.textContent = usuarioTA.trajeOverolAt;
       }
@@ -412,7 +430,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorArnes4ArgollasTA.textContent = usuarioTA.arnes4ArgollasAt;
       }
@@ -428,7 +446,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorArnes5ArgollasTA.textContent = usuarioTA.arnes5ArgollasAt;
       }
@@ -444,7 +462,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorTrabajoAlturasTA.textContent = usuarioTA.trabajoAlturasAt;
       }
@@ -462,7 +480,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEspacioConfinadoTA.textContent =
           usuarioTA.espaciosConfinadosAt;
@@ -481,7 +499,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEnergiasPeligrosasTA.textContent =
           usuarioTA.energiasPeligrosasAt;
@@ -498,7 +516,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPresenciaVirusTA.textContent = usuarioTA.presenciaVirusAt;
       }
@@ -516,7 +534,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPresenciaAnimalesTA.textContent =
           usuarioTA.presenciaAnimalesAt;
@@ -535,7 +553,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorIluminacionDeficienteTA.textContent =
           usuarioTA.iluminacionDeficienteAt;
@@ -553,7 +571,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorExposicionRuidoTA.textContent = usuarioTA.exposicionRuidoAt;
       }
@@ -571,7 +589,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorAltasTempraturasTA.textContent =
           usuarioTA.altasTemperaturasAt;
@@ -590,7 +608,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorBajasTempraturasTA.textContent =
           usuarioTA.bajasTemperaturasAt;
@@ -607,7 +625,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCaidaObjetosTA.textContent = usuarioTA.caidaObjetosAt;
       }
@@ -624,7 +642,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCaidaMismoNivelTA.textContent = usuarioTA.caidaMismoNivelAt;
       }
@@ -642,7 +660,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCaidaDiferenteNivelTA.textContent =
           usuarioTA.caidaDiferenteNivelAt;
@@ -661,7 +679,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorColapsoEstructuralTA.textContent =
           usuarioTA.colapsoEstructuralAt;
@@ -678,7 +696,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorMalOrdenTA.textContent = usuarioTA.malOrdenAseoAt;
       }
@@ -696,7 +714,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorSuperficieIrregularTA.textContent =
           usuarioTA.superficieIrregularAt;
@@ -715,7 +733,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCercaniasRedesElectricasTA.textContent =
           usuarioTA.cercaniaRedesElectricasAt;
@@ -732,7 +750,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorArcoElectricoTA.textContent = usuarioTA.arcoElectricoAt;
       }
@@ -740,42 +758,37 @@ baseDatos
   });
 
 // Contacto con partes en movimiento
-
 const contenedorContactoPartesMovimientoTA = document.getElementById(
   "contactoPartesMovimientoAt"
 );
-
 baseDatos
   .collection("formulaTrabajoAlturas")
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorContactoPartesMovimientoTA.textContent =
           usuarioTA.contactoPartesMovimientoAt;
       }
     });
   });
-
-// Manipulación de herramientas manuales
-
-const contenedorManipulacionHerramientasManualesTA = document.getElementById(
-  "manipulacionHerramientasManualesAt"
-);
-
-baseDatos
-  .collection("formulaTrabajoAlturas")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
-        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
-        contenedorManipulacionHerramientasManualesTA.textContent =
-          usuarioTA.manipulacionHerramientasManualesAt;
-      }
-    });
-  });
+// // Manipulación de herramientas manuales
+// const contenedorManipulacionHerramientasManualesFa = document.getElementById(
+//   "manipulacionHerramientasManualesAt"
+// );
+// baseDatos
+//   .collection("formulaTrabajoAlturas")
+//   .get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       if (doc.id == "klAmeuHhhVc15tplU1rz") {
+//         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+//         contenedorManipulacionHerramientasManualesFa.textContent =
+//           usuarioTA.manipulacionHerramientasManualesAt;
+//       }
+//     });
+//   });
 
 // Proyección de partículas (solidos o líquidos)
 
@@ -788,7 +801,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorProyeccionParticulasTA.textContent =
           usuarioTA.proyeccionParticulasAt;
@@ -807,7 +820,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorContactoSustanciasQuimicasTA.textContent =
           usuarioTA.contactoSustanciasQuimicasAt;
@@ -826,7 +839,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPresenciaGasesVaporesTA.textContent =
           usuarioTA.PresenciaGasesVaporesAt;
@@ -844,7 +857,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorExposicionPolvosTA.textContent = usuarioTA.exposicionPolvoAt;
       }
@@ -862,7 +875,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorManipulacionManualCargasTA.textContent =
           usuarioTA.manipulacionManualCargasAt;
@@ -881,7 +894,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPosturasInadecuadasTA.textContent =
           usuarioTA.posturasInadecuadasAt;
@@ -900,7 +913,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorMovimientosRepetitivosTA.textContent =
           usuarioTA.movimientosRepetitivosAt;
@@ -918,7 +931,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorExposicionLluviaTA.textContent = usuarioTA.exposicionLluviaAt;
       }
@@ -936,7 +949,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorExposicionVientosFuertesTA.textContent =
           usuarioTA.exposicionVientosFuertesAt;
@@ -955,7 +968,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorExposicionDerrumbesDeslizamientosTA.textContent =
           usuarioTA.exposicionDerrumbesDesliamientosAt;
@@ -972,7 +985,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPresenciaFuegoTA.textContent = usuarioTA.presenciaFuegoAt;
       }
@@ -988,7 +1001,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorDerramesFugasTA.textContent = usuarioTA.derramesFugasAt;
       }
@@ -1005,7 +1018,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorRiesgoExplosionTA.textContent = usuarioTA.riesgoExplosionAt;
       }
@@ -1023,7 +1036,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorLineaVerticalFijaTA.textContent =
           usuarioTA.lineaVidaVerticalFijaAt;
@@ -1042,7 +1055,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorLineaVerticalPortatilTA.textContent =
           usuarioTA.lineaVidaVerticalPortatilAt;
@@ -1061,7 +1074,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorLineaVidaHorizontalTA.textContent =
           usuarioTA.lineaVidaHoriontalHorizontalAt;
@@ -1080,7 +1093,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorLineaVidaHorizontalFijaTA.textContent =
           usuarioTA.lineaVidaHoriontalFijaAt;
@@ -1098,7 +1111,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorAnclajePortatilTA.textContent = usuarioTA.anclajePortatilAt;
       }
@@ -1114,7 +1127,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorCintaAnclajeTA.textContent = usuarioTA.cintaAnclajeAt;
       }
@@ -1132,7 +1145,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorContenedorTransitoVerticalTA.textContent =
           usuarioTA.conectorTransitoVerticalAt;
@@ -1151,7 +1164,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEslingaRestriccionTA.textContent =
           usuarioTA.eslingaRestriccionAt;
@@ -1170,7 +1183,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEslingaPosicionamientoTA.textContent =
           usuarioTA.eslingaPosicionamientoAt;
@@ -1189,7 +1202,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEslingaDetencionCaidasTA.textContent =
           usuarioTA.eslingaDetencionCaidasAt;
@@ -1208,7 +1221,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEslingaDetencionCaidasSencillaTA.textContent =
           usuarioTA.eslingaDetencionCaidasSencillaAt;
@@ -1227,7 +1240,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorEslingaDetencionCaidasDobleTA.textContent =
           usuarioTA.eslingaDetencionCaidasDobleAt;
@@ -1235,22 +1248,22 @@ baseDatos
     });
   });
 
-// Delimitación del área
+// // Delimitación del área
 
-const contenedorDelimitacionAreaTA =
-  document.getElementById("delimitacionAreaAt");
+// const contenedorDelimitacionAreaTA =
+//   document.getElementById("delimitacionAreaAt");
 
-baseDatos
-  .collection("formulaTrabajoAlturas")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
-        usuarioTA = doc.data().impresionFormularioTrabajoAltura;
-        contenedorDelimitacionAreaTA.textContent = usuarioTA.delimitacionAreaAt;
-      }
-    });
-  });
+// baseDatos
+//   .collection("formulaTrabajoAlturas")
+//   .get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       if (doc.id == "klAmeuHhhVc15tplU1rz") {
+//         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
+//         contenedorDelimitacionAreaTA.textContent = usuarioTA.delimitacionAreaAt;
+//       }
+//     });
+//   });
 
 // Barandas
 
@@ -1261,7 +1274,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorBandasTA.textContent = usuarioTA.barandasAt;
       }
@@ -1277,7 +1290,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorSeñalizacionTA.textContent = usuarioTA.señaliacionAt;
       }
@@ -1294,7 +1307,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorLineaAdvertenciaTA.textContent = usuarioTA.lineaAdvertenciaAt;
       }
@@ -1310,7 +1323,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorControlAccesoTA.textContent = usuarioTA.controlAccesoAt;
       }
@@ -1326,7 +1339,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorFirmaResidenteTA.textContent =
           usuarioTA.archivoFirmaDigitalSst;
@@ -1345,7 +1358,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorRegistroFotograficoTA.textContent =
           usuarioTA.registroFotograficoTrabajoAlturas;
@@ -1364,7 +1377,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPersonalRealizaraActividadTA.textContent =
           usuarioTA.seleccionTrabajadorAlturas;
@@ -1383,7 +1396,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "klAmeuHhhVc15tplU1rz") {
+      if (doc.id == "ttu3qHhnLRIFnpgJDk10") {
         usuarioTA = doc.data().impresionFormularioTrabajoAltura;
         contenedorPersonalAutorizaraActividadTA.textContent =
           usuarioTA.seleccionAutorizadorAlturas;

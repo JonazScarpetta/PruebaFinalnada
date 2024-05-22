@@ -19,15 +19,35 @@ const formularioDatosAts = document.getElementById("enviar-datos-ats");
 formularioDatosAts.addEventListener("click", function () {
   const impresionFormularioAts = {};
 
+  impresionFormularioAts.ciudadTrabajoAltura = document.getElementById(
+    "ciudadTrabajoAltura"
+  ).value;
+
+  impresionFormularioAts.nombreObra =
+    document.getElementById("nombreObraTrAl").value;
+
+  impresionFormularioAts.direccionTrabajoAltura = document.getElementById(
+    "direccionTrabajoAltura"
+  ).value;
+
+  impresionFormularioAts.fechaInicioActividad = document.getElementById(
+    "fechaInicioActividad"
+  ).value;
+
+  impresionFormularioAts.fechaCulminacionActividad = document.getElementById(
+    "fechaCulminacionActividad"
+  ).value;
+
   impresionFormularioAts.descripcionProcedimientoTarea =
-    document.getElementById("descripcionHerramienta").value;
+    document.getElementById("descripcion-procedimiento-tarea").value;
+
   //acordeon 2
 
   impresionFormularioAts.tipoHerramienta =
     document.getElementById("tipo-herramienta").value;
 
   impresionFormularioAts.descripcionHerramienta = document.getElementById(
-    "descripcion-herramienta"
+    "descripcionHerramientaAts"
   ).value;
   // acordion 3 Sistemas de Acceso
   impresionFormularioAts.escSenAts =

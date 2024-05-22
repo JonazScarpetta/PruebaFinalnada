@@ -22,6 +22,9 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
   impresionFormularioTrabajoAltura.ciudadTrabajoAltura =
     document.getElementById("ciudadTrabajoAltura").value;
 
+  impresionFormularioTrabajoAltura.nombreObra =
+    document.getElementById("nombreObraTrAl").value;
+
   impresionFormularioTrabajoAltura.direccionTrabajoAltura =
     document.getElementById("direccionTrabajoAltura").value;
 
@@ -138,8 +141,8 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
   impresionFormularioTrabajoAltura.contactoPartesMovimientoAt =
     document.getElementById("contactoPartesMovimientoAt").checked;
 
-  impresionFormularioTrabajoAltura.manipulacionHerramientasManualesAT =
-    document.getElementById("manipulacionHerramientasManualesAT").checked;
+  // impresionFormularioTrabajoAltura.manipulacionHerramientasManualesAT =
+  //   document.getElementById("manipulacionHerramientasManualesAT").checked;
 
   impresionFormularioTrabajoAltura.proyeccionParticulasAt =
     document.getElementById("proyeccionParticulasAt").checked;
@@ -218,8 +221,8 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
     document.getElementById("eslingaDetencionCaidasDobleAt").checked;
 
   // acordeon 6 Medidas de Prevencion Contra Caidas
-  impresionFormularioTrabajoAltura.delimitacionAreaAT =
-    document.getElementById("delimitacionAreaAT").checked;
+  // impresionFormularioTrabajoAltura.delimitacionAreaAT =
+  //   document.getElementById("delimitacionAreaAT").checked;
 
   impresionFormularioTrabajoAltura.barandasAt =
     document.getElementById("barandasAt").checked;

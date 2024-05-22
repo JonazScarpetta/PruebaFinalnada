@@ -1,3 +1,54 @@
+// inicio De codigo firebase
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const baseDatos = firebase.firestore();
+
+// fin de codigo firebase
+
+const contenedorNombreTA = document.getElementById("nombreTA");
+
+baseDatos
+  .collection("formulaTrabajoAlturas")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data());
+      const contenedor = document.getElementById("pruebaCards");
+      console.log(
+        doc.data().impresionFormularioTrabajoAltura.ciudadTrabajoAltura
+      );
+      contenedor.innerHTML = `
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre obra</h5>
+                    
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Fecha de inicio: <span></span></li>
+                    <li class="list-group-item">Fecha de culminacion: <span></span></li>
+                    <li class="list-group-item">Direccion: <span></span></li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link" id="" >ATS</a>
+                    <a href="#" class="card-link" id="" >Alturas</a>
+                  </div>
+              </div>
+            </div>
+          `;
+    });
+  });
+
 document.addEventListener("DOMContentLoaded", function () {
   // Contenedor principal
   var containerSm = document.createElement("div");
