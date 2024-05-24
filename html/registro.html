@@ -29,130 +29,168 @@
       >
         <h3>AlturaConnectAPP</h3>
       </div>
-    <div class="mb-3 container-sm">
-      <label class="bg-white d-inline form-label" for="nombres">Nombres:</label>
-      <input
-        class="form-control"
-        id="nombre-pagina-registro"
-        name="nombre-pagina-registro"
-        placeholder="Escribe tus nombres"
-        type="text"
-        required
-      />
-      <label class="bg-white d-inline form-label" for="apellidos">Apellidos:</label>
-      <input
-        class="form-control"
-        id="apellido-pagina-registro"
-        name="apellido-pagina-registro"
-        placeholder="Escribe tus apellidos"
-        type="text"
-        required
-      />
-      <label class="bg-white d-inline form-label" for="documento">Tipo de documento:</label>
-      <select
-        class="form-select form-label"
-        aria-label="Default select example"
-        id="opcion-documento"
-      >
-        <option selected>Selecione una opcion</option>
-        <option value="cedula" class="form-control " id="cedula" >Cedula</option>
-        <option value="cedula-de-extranjeria" class="form-label" id="cedula-de-extranjeria" >Cedula de Extranjeria</option>
-        <option value="permiso-permanencia" class="form-select" id="permiso-permanencia" >
-          Permiso de pemanencia
-        </option>
-      </select>
-      <label class="bg-white d-inline form-label" for="numero-identificacion"
-        >Numero de Identificacion:</label
-      >
-      <input
-        class="form-control"
-        id="numero-de-identificacion"
-        name="numero-de-identificacion"
-        placeholder="Escribe tu numero de identificacion"
-        type="number"
-        required
-      /></select>
-      <label class="bg-white d-inline form-label" for="numero-identificacion"
-        >Numero Telefonico:</label
-      >
-      <input
-        class="form-control"
-        id="numero-telefonico"
-        name="numero-de-identificacion"
-        placeholder="Escribe tu numero de celular"
-        type="number"
-        required
-      />
-      <label class="bg-white d-inline form-label" for="documento">Tipo de Usuario:</label>
-      <select
-        class="form-select form-label"
-        aria-label="Default select example"
-        id="cargo"
-      >
-        <option selected>Selecione una opcion</option>
-        <option value="usuario-registrador" class="form-control " id="cedula" >Usuario Registrador</option>
-        <option value="usuario-autorizador" class="form-label" id="cedula-de-extranjeria" >Usuario Autorizador</option>
-        
-      </select><label for="exampleFormControlInput1" class="bg-white d-inline form-label"
-        >Correo Electronico</label
-      >
-      <input
-        type="email"
-        name="correo-registro"
-        class="form-control"
-        id="correo-registro"
-        placeholder="nombre@ejemplo.com"
-        required
-      />
-      <label class="bg-white d-inline form-label" for="cargo" id="cargar-archivo-imagen"
-                  >Cargar Imagen:</label
-                >
-                <input
-                  id="Cargar-imagen"
-                  name="1"
-                  type="file"
-                  class="form-control"
-                  aria-label="file example"
-                  required
-                />
-                <div class="invalid-feedback">Cargar arvhivo PDF</div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="bg-white d-inline form-label">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="clave-de-registro"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="bg-white d-inline form-label"
-          >Confirm Password</label
+    </div>
+
+    <div class="container-sm mb-3">
+      <form>
+        <label class="bg-white d-inline form-label" for="nombres"
+          >Nombres:</label
         >
         <input
-          type="password"
           class="form-control"
-          id="confirmacion-clave-de-registro"
+          id="nombre-pagina-registro"
+          name="nombre-pagina-registro"
+          placeholder="Escribe tus nombres"
+          type="text"
+          required
         />
-      <div class="row justify-content-evenly mb-3 pt-3"><div class="col-4">
-      <button type="submit"  id="retorno"  class="btn btn-primary"> <a class="text-white" href="/index.html">inicio</a>
+
+        <label class="bg-white d-inline form-label" for="apellidos"
+          >Apellidos:</label
+        >
+        <input
+          class="form-control"
+          id="apellido-pagina-registro"
+          name="apellido-pagina-registro"
+          placeholder="Escribe tus apellidos"
+          type="text"
+          required
+        />
+
+        <label class="bg-white d-inline form-label" for="documento"
+          >Tipo de documento:</label
+        >
+        <select
+          class="form-select form-label"
+          aria-label="Default select example"
+          id="opcion-documento"
+        >
+          <option selected>Seleccione una opción</option>
+          <option value="cedula" class="form-control">Cédula</option>
+          <option value="cedula-de-extranjeria" class="form-label">
+            Cédula de Extranjería
+          </option>
+          <option value="permiso-permanencia" class="form-select">
+            Permiso de Permanencia
+          </option>
+        </select>
+
+        <label class="bg-white d-inline form-label" for="numero-identificacion"
+          >Número de Identificación:</label
+        >
+        <input
+          class="form-control"
+          id="numero-de-identificacion"
+          name="numero-de-identificacion"
+          placeholder="Escribe tu número de identificación"
+          type="number"
+          required
+        />
+
+        <label class="bg-white d-inline form-label" for="numero-telefonico"
+          >Número Telefónico:</label
+        >
+        <input
+          class="form-control"
+          id="numero-telefonico"
+          name="numero-telefonico"
+          placeholder="Escribe tu número de celular"
+          type="number"
+          required
+        />
+
+        <label class="bg-white d-inline form-label" for="cargo"
+          >Tipo de Usuario:</label
+        >
+        <select
+          class="form-select form-label"
+          aria-label="Default select example"
+          id="cargo"
+        >
+          <option selected>Seleccione una opción</option>
+          <option value="usuario-registrador" class="form-control">
+            Usuario Registrador
+          </option>
+          <option value="usuario-autorizador" class="form-label">
+            Usuario Autorizador
+          </option>
+        </select>
+
+        <label class="bg-white d-inline form-label" for="correo-registro"
+          >Correo Electrónico:</label
+        >
+        <input
+          type="email"
+          name="correo-registro"
+          class="form-control"
+          id="correo-registro"
+          placeholder="nombre@ejemplo.com"
+          required
+        />
+
+        <label class="bg-white d-inline form-label" for="cargar-archivo-imagen"
+          >Cargar Imagen:</label
+        >
+        <input
+          id="cargar-imagen"
+          name="cargar-imagen"
+          type="file"
+          class="form-control"
+          aria-label="file example"
+          required
+        />
+        <div class="invalid-feedback">Cargar archivo PDF</div>
+
+        <div class="mb-3">
+          <label for="clave-de-registro" class="bg-white d-inline form-label"
+            >Password</label
+          >
+          <input type="password" class="form-control" id="clave-de-registro" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            for="confirmacion-clave-de-registro"
+            class="bg-white d-inline form-label"
+            >Confirmar Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirmacion-clave-de-registro"
+          />
+        </div>
+      </form>
     </div>
-    <div class="col-4">
-      <button type="submit"  id="iniciar-sesion-pagina-registro"  class="btn btn-primary"><a class="text-white" href="">Registrar</a></button>
+
+    <div class="row justify-content-evenly mb-3 pt-3">
+      <div class="col-4">
+        <button type="submit" id="retorno" class="btn btn-primary">
+          <a class="text-white" href="/index.html">Inicio</a>
+        </button>
+      </div>
+      <div class="col-4">
+        <button
+          type="submit"
+          id="iniciar-sesion-pagina-registro"
+          class="btn btn-primary"
+        >
+          <a class="text-white" href="">Registrar</a>
+        </button>
+      </div>
     </div>
-    
-  </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    
-    <!-- inicio de codigo firestore -->
+
+    <!-- inicio de código firestore -->
     <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+    <!-- fin de código firestore -->
 
-    <!-- fin de codigo firestore -->
     <script src="../js/registro.js"></script>
   </body>
 </html>

@@ -40,7 +40,7 @@ paginaRegistro.addEventListener("click", function (event) {
   paginaRegistroingreso.correoRegistro =
     document.getElementById("correo-registro").value;
   paginaRegistroingreso.cargarImagen =
-    document.getElementById("Cargar-imagen").value;
+    document.getElementById("cargar-imagen").value;
   paginaRegistroingreso.claveRegistro =
     document.getElementById("clave-de-registro").value;
   paginaRegistroingreso.confirmacionClaveRegistro = document.getElementById(

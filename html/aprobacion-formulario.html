@@ -25,33 +25,40 @@
   <body>
     <div class="container-sm mt-5">
       <div
-        class="row text-bg-info  m-3 p-3 border border-primary-subtle border-5 rounded-4"
+        class="row text-bg-info m-3 p-3 border border-primary-subtle border-5 rounded-4"
       >
-        <div class="col-3 text-center text-info-emphasis" onclick="window.history.back()" style="cursor: pointer;">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="30"
-    fill="currentColor"
-    class="bi bi-arrow-left-square"
-    viewBox="0 0 16 16"
-  >
-    <path
-      fill-rule="evenodd"
-      d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
-    />
-  </svg>
-</div>
+        <div
+          class="col-3 text-center text-info-emphasis"
+          onclick="window.history.back()"
+          style="cursor: pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-arrow-left-square"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+            />
+          </svg>
+        </div>
         <div class="col-9 text-center text-info-emphasis">
           <h5>Aprobacion Formularios</h5>
         </div>
       </div>
     </div>
 
-    <div conteiner><h5>En Construccion buscar en boostrap tablas</h5></div>
+    <div class="container">
+      <h5>En Construccion buscar en Bootstrap tablas</h5>
+    </div>
+
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <div class="container-sm justify-content-end sticky bottom">
+    <div class="container-sm justify-content-end sticky-bottom">
       <br />
       <div class="container text-center mt-3">
         <div class="row row-cols-3">
@@ -67,6 +74,20 @@
             >
               <a class="text-white" href="/index.html">Salir</a>
             </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: 0.75rem;
+              "
+            >
+              <a class="text-white" href="/html/aprobacion-formulario.html"
+                >Autorizados</a
+              >
             </button>
           </div>
           <div class="col">
@@ -79,29 +100,20 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              <a class="text-white" href="/html/aprobacion-formulario.html">Autorizados</a>
-            </button>
-            </button>
-          </div>
-          <div class="col">
-            <button
-              type="button"
-              class="btn btn-primary"
-              style="
-                --bs-btn-padding-y: 0.25rem;
-                --bs-btn-padding-x: 0.5rem;
-                --bs-btn-font-size: 0.75rem;
-              "
-            >
-              <a class="text-white" href="/html/cardsUsuariosAutorizacion.html">Usuarios</a>
-            </button>
+              <a class="text-white" href="/html/cardsUsuariosAutorizacion.html"
+                >Usuarios</a
+              >
             </button>
           </div>
         </div>
       </div>
-    </div><div class="row sticky-bottom m-3">
+    </div>
+
+    <div class="row sticky-bottom m-3">
       <div class="text-center">
-        <button type="button" class="btn btn-danger">Emergencia</button>
+        <button type="button" class="btn btn-danger">
+          <a class="text-white" href="tel:+573187388954">Emergencia</a>
+        </button>
       </div>
       <br /><br />
     </div>
@@ -112,6 +124,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
-    
   </body>
 </html>
