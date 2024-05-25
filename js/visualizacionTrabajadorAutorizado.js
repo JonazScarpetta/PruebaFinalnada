@@ -1,5 +1,3 @@
-// inicio De codigo firebase
-
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -13,343 +11,58 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// fin de codigo firebase
+const urlParams = new URLSearchParams(window.location.search);
+const docId = urlParams.get("id");
 
-let usuarioTA = {
-  nombrePT: "...... ",
-  apellidoPT: "......",
-  correoElectronicoTA: "......",
-  celularTA: "......",
-  seleccionDocumentoTrabajador: "......",
-  numeroDocumentoTrabajadorPT: "......",
-  cargoPT: "......",
-  numeroCelularEmergencia: "......",
-  celInfEmeTA: "......",
-  planillaSeguridadSocial: "......",
-  fechaVencimientoPlanilla: "......",
-  cursoAlturas: "......",
-  fechaVencimientoCursoAlturas: "......",
-  fechaVencimientoCursoAlturas: "......",
-  examenMedico: "......",
-  fechaVencimientoExamenMedico: "......",
-  nombreArl: "......",
-  nombreEps: "......",
-  nombreFondoPensiones: "......",
-  registroFotograficoTrabajador: "......",
-  firmaDigitalTrabajador: "......",
-};
-
-const contenedorNombreTA = document.getElementById("nombreTA");
-
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorNombreTA.textContent = usuarioTA.nombrePT;
-      }
-    });
-  });
-
-//apellido
-
-const contenedorApellidoTA = document.getElementById("apellidoTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorApellidoTA.textContent = usuarioTA.apellidoPT;
-      }
-    });
-  });
-
-// tipo documento
-
-const contenedorTipoDocumentoTA = document.getElementById("tipoDocumentoTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorTipoDocumentoTA.textContent =
+if (docId) {
+  baseDatos
+    .collection("trabajagorAutorizado")
+    .doc(docId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        const usuarioTA = doc.data().impresionTrabajadorDatos;
+        document.getElementById("nombreTA").textContent = usuarioTA.nombrePT;
+        document.getElementById("apellidoTA").textContent =
+          usuarioTA.apellidoPT;
+        document.getElementById("tipoDocumentoTA").textContent =
           usuarioTA.seleccionDocumentoTrabajador;
-      }
-    });
-  });
-
-// numero documento
-
-const contenedorNumeroDocumentoTA =
-  document.getElementById("numeroDocumentoTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorNumeroDocumentoTA.textContent =
+        document.getElementById("numeroDocumentoTA").textContent =
           usuarioTA.numeroDocumentoTrabajadorPT;
-      }
-    });
-  });
-
-// Cargo
-
-const contenedorCargoTA = document.getElementById("CargoTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorCargoTA.textContent = usuarioTA.cargoPT;
-      }
-    });
-  });
-
-// celular
-
-const contenedorCelularTA = document.getElementById("celularTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorCelularTA.textContent = usuarioTA.numeroCelularTrabajador;
-      }
-    });
-  });
-
-// correo
-
-const contenedorCorreoTA = document.getElementById("correoElectronicoTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorCorreoTA.textContent = usuarioTA.correoElectronicoTA;
-      }
-    });
-  });
-
-//Contacto Emergencia
-
-const contenedorConEmeTA = document.getElementById("conEmeTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorConEmeTA.textContent = usuarioTA.contactoEmergencia;
-      }
-    });
-  });
-
-//Celular Contacto Emergencia
-
-const contenedorCelInfEmeTA = document.getElementById("celInfEmeTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorCelInfEmeTA.textContent = usuarioTA.numeroCelularEmergencia;
-      }
-    });
-  });
-
-//planilla seguridad social
-
-const contenedorPlanillaTA = document.getElementById("planillaTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorPlanillaTA.textContent = usuarioTA.planillaSeguridadSocial;
-      }
-    });
-  });
-
-// Vencimiento planilla seguridad social
-
-const contenedorVenPlanillaTA = document.getElementById("venPlanillaTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorVenPlanillaTA.textContent =
+        document.getElementById("CargoTA").textContent = usuarioTA.cargoPT;
+        document.getElementById("celularTA").textContent =
+          usuarioTA.numeroCelularTrabajador;
+        document.getElementById("correoElectronicoTA").textContent =
+          usuarioTA.correoElectronicoTA;
+        document.getElementById("conEmeTA").textContent =
+          usuarioTA.contactoEmergencia;
+        document.getElementById("celInfEmeTA").textContent =
+          usuarioTA.numeroCelularEmergencia;
+        document.getElementById("planillaTA").textContent =
+          usuarioTA.planillaSeguridadSocial;
+        document.getElementById("venPlanillaTA").textContent =
           usuarioTA.fechaVencimientoPlanilla;
-      }
-    });
-  });
-// Curos de Alturas
-
-const contenedorCurAlturasTA = document.getElementById("curAlturasTA");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorCurAlturasTA.textContent = usuarioTA.cursoAlturas;
-      }
-    });
-  });
-
-// Vencimiento Curos de Alturas
-
-const contenedorVencimientoAlturasTA = document.getElementById(
-  "fechaVencimientoCursoAlturas"
-);
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorVencimientoAlturasTA.textContent =
+        document.getElementById("curAlturasTA").textContent =
+          usuarioTA.cursoAlturas;
+        document.getElementById("fechaVencimientoCursoAlturas").textContent =
           usuarioTA.fechaVencimientoCursoAlturas;
-      }
-    });
-  });
-
-// contenedorExamenMedicoTA
-
-const contenedorExamenMedicoTA = document.getElementById("examenMedico");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorExamenMedicoTA.textContent = usuarioTA.examenMedico;
-      }
-    });
-  });
-
-// contenedorVencimientoExamenMedicoTA
-
-const contenedorVencimientoExamenMedicoTA = document.getElementById(
-  "fechaVencimientoExamenMedico"
-);
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorVencimientoExamenMedicoTA.textContent =
+        document.getElementById("examenMedico").textContent =
+          usuarioTA.examenMedico;
+        document.getElementById("fechaVencimientoExamenMedico").textContent =
           usuarioTA.fechaVencimientoExamenMedico;
-      }
-    });
-  });
-
-// contenedorNombreArlTA
-
-const contenedorNombreArlTA = document.getElementById("nombreArl");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorNombreArlTA.textContent = usuarioTA.nombreArl;
-      }
-    });
-  });
-
-// contenedorNombreEpsTA
-
-const contenedorNombreEpsTA = document.getElementById("nombreEps");
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorNombreEpsTA.textContent = usuarioTA.nombreEps;
-      }
-    });
-  });
-
-// contenedorFotoTrabajadorTA
-
-const contenedorFotoTrabajadorTA = document.getElementById(
-  "registroFotograficoTrabajador"
-);
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorFotoTrabajadorTA.textContent =
+        document.getElementById("nombreArl").textContent = usuarioTA.nombreArl;
+        document.getElementById("nombreEps").textContent = usuarioTA.nombreEps;
+        document.getElementById("registroFotograficoTrabajador").textContent =
           usuarioTA.registroFotograficoTrabajador;
+        document.getElementById("nombreFondoPensiones").textContent =
+          usuarioTA.nombreFondoPensiones;
+        document.getElementById("firmaDigitalTrabajador").textContent =
+          usuarioTA.firmaDigitalTrabajador;
+      } else {
+        console.error("No such document!");
       }
+    })
+    .catch((error) => {
+      console.error("Error getting document:", error);
     });
-  });
-
-// contenedorNombreFondePenTA
-
-const contenedorNombreFondePenTA = document.getElementById(
-  "nombreFondoPensiones"
-);
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorNombreFondePenTA.textContent = usuarioTA.nombreFondoPensiones;
-      }
-    });
-  });
-
-// contenedorFirmaDigitalTA
-
-const contenedorFirmaDigitalTA = document.getElementById(
-  "firmaDigitalTrabajador"
-);
-baseDatos
-  .collection("trabajagorAutorizado")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
-        usuarioTA = doc.data().impresionTrabajadorDatos;
-        contenedorFirmaDigitalTA.textContent = usuarioTA.firmaDigitalTrabajador;
-      }
-    });
-  });
+}
