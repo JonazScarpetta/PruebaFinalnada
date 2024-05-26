@@ -30,7 +30,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorNombre.textContent = usuario.nombrePaginaRegistro;
       }
@@ -44,7 +44,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorApellido.textContent = usuario.apellidoPaginaRegistro;
       }
@@ -58,7 +58,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorCelular.textContent = usuario.numeroTelefonico;
       }
@@ -72,7 +72,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorCorreo.textContent = usuario.correoRegistro;
       }
@@ -89,7 +89,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorTipoDocumento.textContent = usuario.opcionDocumento;
       }
@@ -106,7 +106,7 @@ baseDatos
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.id == "ZTd5MhN223IGe4jHJr02") {
+      if (doc.id == "s3qvwbnkqbhCIkit8KZq") {
         usuario = doc.data().paginaRegistroingreso;
         contenedorNumeroDocumento.textContent = usuario.numeroIdentificacion;
       }

@@ -43,7 +43,7 @@
             <path
               fill-rule="evenodd"
               d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
-            />
+            ></path>
           </svg>
         </div>
         <div class="col-9 text-center text-info-emphasis">
@@ -52,93 +52,12 @@
       </div>
     </div>
 
-    <!-- 1 Primera pareja de cards -->
-    <div class="container mb-2">
-      <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">SST Permiso de Trabajo</h5>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Formulario #</span>
-                <p class="card-text ms-2">T-A-001</p>
-              </div>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Fecha</span>
-                <p class="card-text ms-2">11/may/2024</p>
-              </div>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Direccion</span>
-                <p class="card-text ms-2">Carrera 68a # 80-34</p>
-              </div>
-              <a
-                href="../html/visualizacionFormularioAlturas.html"
-                class="btn btn-primary"
-                >Mas Informacion</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">SST Formulario ATS</h5>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Formulario #</span>
-                <p class="card-text ms-2">T-A-001</p>
-              </div>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Fecha</span>
-                <p class="card-text ms-2">11/may/2024</p>
-              </div>
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text ms-2">Direccion</span>
-                <p class="card-text ms-2">Carrera 68a # 80-34</p>
-              </div>
-              <a
-                href="../html/visualizacionFormularioAts.html"
-                class="btn btn-primary"
-                >Mas informacion</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="bg-primary h-100 fw-bold" />
+    <!-- Sección de cards -->
+    <section
+      class="container row row-cols-1 row-cols-md-3 g-4"
+      id="pruebaCards"
+    ></section>
 
-    <!-- 2 Segunda pareja de cards -->
-    <div class="container mb-2">
-      <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="bg-primary h-100 fw-bold" />
-
-    <!-- 3 Tarjeta de cards -->
     <div class="container-sm justify-content-end sticky-bottom">
       <br />
       <div class="container text-center mt-3">
@@ -153,7 +72,9 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              <a class="text-white" href="/index.html">Salir</a>
+              <a class="text-white text-decoration-none" href="/index.html"
+                >Salir</a
+              >
             </button>
           </div>
           <div class="col">
@@ -166,15 +87,17 @@
                 --bs-btn-font-size: 0.75rem;
               "
             >
-              <a class="text-white" href="/html/aprobacion_pendiente.html"
+              <a
+                class="text-white text-decoration-none"
+                href="/html/aprobacion_pendiente.html"
                 >Autorizacion</a
               >
             </button>
           </div>
           <div class="col">
-            <!--
+            <!-- Uncomment if needed in future
           <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: 0.25rem; --bs-btn-padding-x: 0.5rem; --bs-btn-font-size: 0.75rem;">
-            <a class="text-white" href="/html/cardTrabajadores.html">Trabajador</a>
+            <a class="text-white text-decoration-none" href="/html/cardTrabajadores.html">Trabajador</a>
           </button>
           --></div>
         </div>
@@ -184,7 +107,9 @@
     <div class="row sticky-bottom m-3">
       <div class="text-center">
         <button type="button" class="btn btn-danger">
-          <a class="text-white" href="tel:+573187388954">Emergencia</a>
+          <a class="text-white text-decoration-none" href="tel:+573187388954"
+            >Emergencia</a
+          >
         </button>
       </div>
       <br /><br />
@@ -195,6 +120,9 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <!-- Código Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
     <script src="../js/aprobacionPendiente.js"></script>
   </body>
 </html>

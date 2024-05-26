@@ -13,6 +13,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
+// fin de codigo firebase
+
 const iniciarSesionRegistro = document.getElementById(
   "iniciar-sesion-registro"
 );
@@ -76,7 +78,7 @@ iniciarSesionRegistro.addEventListener("click", function (event) {
           }
         } else {
           alert(
-            "Parece que no eres un usuario registrador, intentemoslo como administrador"
+            "Parece que no eres un usuario registrador, intentemoslo como autorizado"
           );
           window.location.href = "../html/iniciar-sesion-autorizador.html";
         }

@@ -795,14 +795,21 @@ Guantes de nitrilo de precisión  </label>
           <div class="accordion-body">
             <div class="mb-1">
               <label class="form-label" for="cargo">Firma Residente SST:</label>
-              <input
-                id="archivoFirmaDigitalSst"
-                name="archivo-pdf-firma-digital"
-                type="file"
-                class="form-control"
-                aria-label="file example"
-                required
-              />
+                <!-- codigo prueba firma Digital -->
+
+<div class="container-sm mt-5">
+      <label class="form-label" for="cargo">Firma Residente SST:</label>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <canvas id="signatureCanvas" width="300" height="200"></canvas>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8 text-center">
+          <button id="clearButton" class="btn btn-primary mr-2">Limpiar</button>
+          <button id="saveButton" class="btn btn-primary">Guardar</button></div>
+
+          <!-- fin prueba firma digital -->
             </div>
             <div class="mb-1">
               <label class="form-label" for="cargo">Registro Fotografico:</label>
