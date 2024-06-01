@@ -22,6 +22,7 @@ if (docId) {
     .then((doc) => {
       if (doc.exists) {
         const visualizacionFormularioAts = doc.data().impresionFormularioAts;
+        console.log(visualizacionFormularioAts);
 
         document.getElementById("ciudadTrabajoAltura").textContent =
           visualizacionFormularioAts.ciudadTrabajoAltura;
@@ -35,12 +36,12 @@ if (docId) {
           visualizacionFormularioAts.fechaCulminacionActividad;
         document.getElementById("desProTarAts").textContent =
           visualizacionFormularioAts.descripcionProcedimientoTarea;
-        document.getElementById("tipoHerramientaAts").textContent =
+        document.getElementById("tipoHerranientaAts").textContent =
           visualizacionFormularioAts.tipoHerramienta;
         document.getElementById("descripcionHerramientaAts").textContent =
           visualizacionFormularioAts.descripcionHerramienta;
         document.getElementById("escaleraSencillaAts").textContent =
-          visualizacionFormularioAts.escaleraSencillaAts;
+          visualizacionFormularioAts.escSenAts;
         document.getElementById("escaleraDobleAts").textContent =
           visualizacionFormularioAts.escaleraDobleAts;
         document.getElementById("escaleraTijeraAts").textContent =

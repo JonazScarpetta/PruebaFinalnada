@@ -237,8 +237,8 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
     document.getElementById("controlAccesoAt").checked;
 
   // acordeon 7 Aprobacion y validacion permiso
-  impresionFormularioTrabajoAltura.archivoFirmaDigitalSst =
-    document.getElementById("archivoFirmaDigitalSst").value;
+  // impresionFormularioTrabajoAltura.archivoFirmaDigitalSst =
+  //   document.getElementById("archivoFirmaDigitalSst").value;
 
   impresionFormularioTrabajoAltura.registroFotograficoTrabajoAlturas =
     document.getElementById("registroFotograficoTrabajoAlturas").value;

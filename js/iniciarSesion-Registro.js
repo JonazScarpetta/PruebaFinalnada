@@ -65,6 +65,23 @@ document
             window.location.href = "../html/ingresoRegistro.html";
             autorizado = true;
           }
+          if (
+            data.cargo === "usuario-autorizador" &&
+            validarContrasenas(
+              correo,
+              clave,
+              data.correoRegistro,
+              data.claveRegistro,
+              console.log(correo),
+              console.log(clave),
+              console.log(data.correoRegistro),
+              console.log(data.claveRegistro)
+            )
+          ) {
+            alert("Usted es un usuario autorizador");
+            window.location.href = "../html/iniciar-sesion-autorizador.html";
+            autorizado = true;
+          }
         });
 
         if (!autorizado) {

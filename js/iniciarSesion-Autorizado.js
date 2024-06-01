@@ -61,17 +61,30 @@ document
             window.location.href = "../html/ingresoAutorizado.html";
             autorizado = true;
           }
+
+          if (
+            data.cargo === "usuario-registrador" &&
+            validarContrasenas(
+              correo,
+              clave,
+              data.correoRegistro,
+              data.claveRegistro,
+              console.log(correo),
+              console.log(clave),
+              console.log(data.correoRegistro),
+              console.log(data.claveRegistro)
+            )
+          ) {
+            alert("Usted es un usuario registrador");
+            window.location.href = "../html/iniciar-sesion-registro.html";
+            autorizado = true;
+          }
         });
 
         if (!autorizado) {
           alertaError.innerHTML =
             '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
         }
-      })
-      .catch((error) => {
-        console.error("Error al obtener los datos de usuario:", error);
-        alertaError.innerHTML =
-          '<h4 class="bg-danger">Ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.</h4>';
       });
     console.log(correo),
       console.log(clave),
