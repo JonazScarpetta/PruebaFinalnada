@@ -1,5 +1,3 @@
-// inicio De codigo firebase
-
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -13,489 +11,79 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// Inicio datos formulario
+const urlParams = new URLSearchParams(window.location.search);
+const docId = urlParams.get("id");
 
-let visualizacionFormularioAts = {
-  ciudadTrabajoAltura: "......",
-  nombreObraTrAl: "......",
-  direccionTrabajoAltura: "......",
-  fechaInicioActividad: "......",
-  fechaCulminacionActividad: "......",
+if (docId) {
+  baseDatos
+    .collection("permisoATS")
+    .doc(docId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        const visualizacionFormularioAts = doc.data().impresionFormularioAts;
 
-  desProTarAts: "......",
-  tipoHerramienta: "......",
-  descripcionHerramienta: "......",
-  escaleraSencillaAts: "...........",
-  escaleraDobleAts: "......",
-  escaleraTijeraAts: "......",
-  escDobExtAts: "......",
-  andModAts: "......",
-  andColAts: "......",
-  elePerAts: "......",
-  otroAts: "......",
-  salEmerAts: "......",
-  ruiTraAts: "......",
-  iluminacionAts: "......",
-  pelResAts: "......",
-  pasDetActAts: "......",
-  pelExiPotAts: "......",
-  conAts: "......",
-  contReqAts: "......",
-  archivoFirmaDigitalSstAts: "......",
-  registroFotograficoAts: "......",
-  seleccionPersonalAts: "......",
-  seleccionAutorizadorAts: "......",
-  ciudadTrabajoAltura: "......",
-};
-
-// Ciudad
-
-const contenedorCiudad = document.getElementById("ciudadTrabajoAltura");
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorCiudad.textContent =
+        document.getElementById("ciudadTrabajoAltura").textContent =
           visualizacionFormularioAts.ciudadTrabajoAltura;
-      }
-    });
-  });
-
-// Nombre Obra
-
-const contenedorNombreObra = document.getElementById("nombreObraTrAl");
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorNombreObra.textContent =
+        document.getElementById("nombreObraTrAl").textContent =
           visualizacionFormularioAts.nombreObra;
-      }
-    });
-  });
-
-// Direccion Obra
-
-const contenedorDireccionObra = document.getElementById(
-  "direccionTrabajoAltura"
-);
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorDireccionObra.textContent =
+        document.getElementById("direccionTrabajoAltura").textContent =
           visualizacionFormularioAts.direccionTrabajoAltura;
-      }
-    });
-  });
-
-// Fecha Inicio Actividad
-
-const contenedorInicioActividad = document.getElementById(
-  "fechaInicioActividad"
-);
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorInicioActividad.textContent =
+        document.getElementById("fechaInicioActividad").textContent =
           visualizacionFormularioAts.fechaInicioActividad;
-      }
-    });
-  });
-// Fecha Fin Actividad
-
-const contenedorFinActividad = document.getElementById(
-  "fechaCulminacionActividad"
-);
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorFinActividad.textContent =
+        document.getElementById("fechaCulminacionActividad").textContent =
           visualizacionFormularioAts.fechaCulminacionActividad;
-      }
-    });
-  });
-
-// Descripcion y procedimiento tarea
-
-const contenedorDesProTarAts = document.getElementById("desProTarAts");
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorDesProTarAts.textContent =
+        document.getElementById("desProTarAts").textContent =
           visualizacionFormularioAts.descripcionProcedimientoTarea;
-      }
-    });
-  });
-
-//tipo de herramienta
-
-const contenedorTipoHeramienta = document.getElementById("tipoHerranientaAts");
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorTipoHeramienta.textContent =
+        document.getElementById("tipoHerramientaAts").textContent =
           visualizacionFormularioAts.tipoHerramienta;
-      }
-    });
-  });
-
-// descripcion de la herramienta
-
-const contenedorDescripcionHeramienta = document.getElementById(
-  "descripcionHerramientaAts"
-);
-
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorDescripcionHeramienta.textContent =
+        document.getElementById("descripcionHerramientaAts").textContent =
           visualizacionFormularioAts.descripcionHerramienta;
-      }
-    });
-  });
-
-// escalera sencilla
-
-const contenedorEscaleraSencillaAts = document.getElementById(
-  "escaleraSencillaAts"
-);
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorEscaleraSencillaAts.textContent =
-          visualizacionFormularioAts.escSenAts;
-      }
-    });
-  });
-
-// escalera Doble Extendible
-
-const contenedorEscaleraDobleAts = document.getElementById("escDobExtAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorEscaleraDobleAts.textContent =
+        document.getElementById("escaleraSencillaAts").textContent =
+          visualizacionFormularioAts.escaleraSencillaAts;
+        document.getElementById("escaleraDobleAts").textContent =
+          visualizacionFormularioAts.escaleraDobleAts;
+        document.getElementById("escaleraTijeraAts").textContent =
+          visualizacionFormularioAts.escaleraTijeraAts;
+        document.getElementById("escDobExtAts").textContent =
           visualizacionFormularioAts.escDobExtAts;
-      }
-    });
-  });
-
-// escalera Tijera
-
-const contenedorEscaleraTijeraAts =
-  document.getElementById("escaleraTijeraAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorEscaleraTijeraAts.textContent =
-          visualizacionFormularioAts.escTipTijAts;
-      }
-    });
-  });
-
-// Andamio Modular
-
-const contenedorAndamioModularAts = document.getElementById("andModAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorAndamioModularAts.textContent =
+        document.getElementById("andModAts").textContent =
           visualizacionFormularioAts.andModAts;
-      }
-    });
-  });
-
-// Andamio Colgante
-
-const contenedorAndamioColganteAts = document.getElementById("andColAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorAndamioColganteAts.textContent =
+        document.getElementById("andColAts").textContent =
           visualizacionFormularioAts.andColAts;
-      }
-    });
-  });
-
-// Elevador Personal
-
-const contenedorElevadorPersonalAts = document.getElementById("elePerAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorElevadorPersonalAts.textContent =
+        document.getElementById("elePerAts").textContent =
           visualizacionFormularioAts.elePerAts;
-      }
-    });
-  });
-
-// Otro / cual
-
-const contenedorOtroCualAts = document.getElementById("otroAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorOtroCualAts.textContent = visualizacionFormularioAts.otroAts;
-      }
-    });
-  });
-
-// ¿Existen, están despejadas y señalizadas las rutas, salidas
-
-const contenedorSalidaEmergenciaAts = document.getElementById("salEmerAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorSalidaEmergenciaAts.textContent =
+        document.getElementById("otroAts").textContent =
+          visualizacionFormularioAts.otroAts;
+        document.getElementById("salEmerAts").textContent =
           visualizacionFormularioAts.salEmerAts;
-      }
-    });
-  });
-
-// ¿El ruido del lugar de trabajo es tolerable y se puede controlar?
-
-const contenedorRuidoTrabajoAts = document.getElementById("ruiTraAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorRuidoTrabajoAts.textContent =
+        document.getElementById("ruiTraAts").textContent =
           visualizacionFormularioAts.ruiTraAts;
-      }
-    });
-  });
-
-// ¿La iluminación de lugar es aceptable ?
-
-const contenedorIluminacionAceAts = document.getElementById("iluminacionAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorIluminacionAceAts.textContent =
+        document.getElementById("iluminacionAts").textContent =
           visualizacionFormularioAts.iluminacionAts;
-      }
-    });
-  });
-
-// ¿No Hay peligro de resbalar o tropezar alrededor del área de trabajo?
-
-const contenedorPeligroResAts = document.getElementById("pelResAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorPeligroResAts.textContent =
+        document.getElementById("pelResAts").textContent =
           visualizacionFormularioAts.pelResAts;
-      }
-    });
-  });
-
-// Pasos detallados de la actividad
-
-const contenedorPasosDetAts = document.getElementById("pasDetActAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorPasosDetAts.textContent =
+        document.getElementById("pasDetActAts").textContent =
           visualizacionFormularioAts.pasDetActAts;
-      }
-    });
-  });
-
-//Peligros Existentes y Pontenciales
-
-const contenedorPelidroExiAts = document.getElementById("pelExiPotAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorPelidroExiAts.textContent =
+        document.getElementById("pelExiPotAts").textContent =
           visualizacionFormularioAts.pelExiPotAts;
-      }
-    });
-  });
-
-//Consecuencias
-
-const contenedorConsecuenciasAts = document.getElementById("conAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorConsecuenciasAts.textContent =
+        document.getElementById("conAts").textContent =
           visualizacionFormularioAts.conAts;
-      }
-    });
-  });
-
-//Controles Requeridos
-
-const contenedorControlesRequeridosAts = document.getElementById("contReqAts");
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorControlesRequeridosAts.textContent =
+        document.getElementById("contReqAts").textContent =
           visualizacionFormularioAts.contReqAts;
-      }
-    });
-  });
-// Firma residente SST
-const contenedorFirmaResidenteSstAts = document.getElementById(
-  "archivo-firma-digital-sst-ats"
-);
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorFirmaResidenteSstAts.textContent =
+        document.getElementById("archivoFirmaDigitalSstAts").textContent =
           visualizacionFormularioAts.archivoFirmaDigitalSstAts;
-      }
-    });
-  });
-
-// Registro Fotografico
-const contenedorRegistroFotograficoAts = document.getElementById(
-  "registro-fotografico-ats"
-);
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorRegistroFotograficoAts.textContent =
+        document.getElementById("registroFotograficoAts").textContent =
           visualizacionFormularioAts.registroFotograficoAts;
-      }
-    });
-  });
-
-// Trabajador Registrado
-const contenedorSeleccionPersonalAts = document.getElementById(
-  "seleccion-personal-ats"
-);
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorSeleccionPersonalAts.textContent =
+        document.getElementById("seleccionPersonalAts").textContent =
           visualizacionFormularioAts.seleccionPersonalAts;
-      }
-    });
-  });
-
-// Usuario Autorizador
-const contenedorUsuarioAutorizadorAts = document.getElementById(
-  "seleccion-autorizador-ats"
-);
-baseDatos
-  .collection("permisoATS")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "CwM5xHjBQBbOItOumue1") {
-        visualizacionFormularioAts = doc.data().impresionFormularioAts;
-        contenedorUsuarioAutorizadorAts.textContent =
+        document.getElementById("seleccionAutorizadorAts").textContent =
           visualizacionFormularioAts.seleccionAutorizadorAts;
+      } else {
+        console.error("No such document!");
       }
+    })
+    .catch((error) => {
+      console.error("Error getting document:", error);
     });
-  });
+}

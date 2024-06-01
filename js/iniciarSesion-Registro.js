@@ -1,5 +1,4 @@
-// inicio De codigo firebase
-
+// Firebase configuration and initialization
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -9,86 +8,73 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// fin de codigo firebase
-
-const iniciarSesionRegistro = document.getElementById(
-  "iniciar-sesion-registro"
-);
-
-// Funcion validacion
-
-function validarContrasenasIngresoRegistro(
+function validarContrasenas(
   correoIngreso,
   contraseñaIngreso,
   correoBD,
   contraseñaBD
 ) {
-  if (correoIngreso === correoBD && contraseñaIngreso === contraseñaBD) {
-    return true;
-    //alert("Contraseñas coinciden. ¡Bienvenido!");
-    //window.location.href = "../html/ingresoRegistro.html";
-  } else {
-    return false;
-    //alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-  }
+  return correoIngreso === correoBD && contraseñaIngreso === contraseñaBD;
 }
 
-iniciarSesionRegistro.addEventListener("click", function (event) {
-  event.preventDefault();
+document
+  .getElementById("iniciar-sesion-registro")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-  const usuarioRegistro = {};
-  var visualizacionFormularioUsuario = {};
+    const correo = document.getElementById("correo-electronico-registro").value;
+    const clave = document.getElementById("clave-registro-inicio").value;
+    const esRobot = document.getElementById("usuario-registro-Check").checked;
 
-  usuarioRegistro.correoElectronicoRegistro = document.getElementById(
-    "correo-electronico-registro"
-  ).value;
-  usuarioRegistro.usuarioRegistroChecked = document.getElementById(
-    "usuario-registro-Check"
-  ).checked;
-  usuarioRegistro.claveRegistro = document.getElementById(
-    "clave-registro-inicio"
-  ).value;
+    if (!esRobot) {
+      const alertaError = document.getElementById("alertaError");
+      alertaError.innerHTML =
+        '<h4 class="bg-danger">Debes confirmar que no eres un robot.</h4>';
+      return;
+    }
 
-  //console.log(usuarioRegistro);
+    baseDatos
+      .collection("usuario")
+      .get()
+      .then((querySnapshot) => {
+        let autorizado = false;
 
-  //iniciar sesion registro
-  var siguiente = false;
-  baseDatos
-    .collection("usuario")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        visualizacionFormularioUsuario = doc.data().paginaRegistroingreso;
-
-        if (visualizacionFormularioUsuario.cargo == "usuario-registrador") {
-          siguiente = validarContrasenasIngresoRegistro(
-            usuarioRegistro.correoElectronicoRegistro,
-            usuarioRegistro.claveRegistro,
-            visualizacionFormularioUsuario.correoRegistro,
-            visualizacionFormularioUsuario.claveRegistro
-          );
-
-          if (siguiente) {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data().paginaRegistroingreso;
+          if (
+            data.cargo === "usuario-registrador" &&
+            validarContrasenas(
+              correo,
+              clave,
+              data.correoRegistro,
+              data.claveRegistro,
+              console.log(correo),
+              console.log(clave),
+              console.log(data.correoRegistro),
+              console.log(data.claveRegistro)
+            )
+          ) {
+            console.log(correo);
+            console.log(clave);
+            console.log(data.correoRegistro);
+            console.log(data.claveRegistro);
             alert("Contraseñas coinciden. ¡Bienvenido!");
             window.location.href = "../html/ingresoRegistro.html";
+            autorizado = true;
           }
-        } else {
-          alert(
-            "Parece que no eres un usuario registrador, intentemoslo como autorizado"
-          );
-          window.location.href = "../html/iniciar-sesion-autorizador.html";
+        });
+
+        if (!autorizado) {
+          alertaError.innerHTML =
+            '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
         }
       });
-      console.log(siguiente);
-      if (!siguiente) {
-        //alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-        const alertaError = document.getElementById("alertaError");
-        alertaError.innerHTML =
-          '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
-      }
-    });
-});
+    console.log(correo),
+      console.log(clave),
+      console.log(data.correoRegistro),
+      console.log(data.claveRegistro);
+    validarContrasenas();
+  });

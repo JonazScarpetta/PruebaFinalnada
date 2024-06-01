@@ -8,7 +8,7 @@ function initMap() {
     zoom: 8,
   });
 
-  // Load locations from Firestore and add markers
+  // traer datos de geoubicacion
   loadLocations();
 }
 

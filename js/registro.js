@@ -15,9 +15,7 @@ const baseDatos = firebase.firestore();
 
 // fin de codigo firebase
 
-const paginaRegistro = document.getElementById(
-  "iniciar-sesion-pagina-registro"
-);
+let paginaRegistro = document.getElementById("iniciar-sesion-pagina-registro");
 paginaRegistro.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -82,7 +80,7 @@ function validarContraseñas() {
   ) {
     alert("Contraseñas coinciden. ¡Bienvenido!");
     validacion = true;
-    //window.location.href = "/index.html";
+    window.location.href = "/index.html";
   } else {
     var mensajeError =
       "Las contraseñas no coinciden o no cumplen con los requisitos:\n";

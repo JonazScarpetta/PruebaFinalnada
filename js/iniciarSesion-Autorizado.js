@@ -1,5 +1,4 @@
-// inicio De codigo firebase
-
+// Configuración e inicialización de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -9,86 +8,74 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Initialize Firebase
+// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// fin de codigo firebase
-
-const iniciarSesionAutorizado = document.getElementById(
-  "iniciar-sesion-autorizado"
-);
-
-// funcion validacion
-
-function validarContrasenasIngresoAutorizado(
+// Validar contraseñas
+function validarContrasenas(
   correoIngreso,
   contraseñaIngreso,
   correoBD,
   contraseñaBD
 ) {
-  if (correoIngreso === correoBD && contraseñaIngreso === contraseñaBD) {
-    return true;
-    //alert("Contraseñas coinciden. ¡Bienvenido!");
-    //window.location.href = "../html/ingresoRegistro.html";
-  } else {
-    return false;
-    //alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-  }
+  return correoIngreso === correoBD && contraseñaIngreso === contraseñaBD;
 }
 
-iniciarSesionAutorizado.addEventListener("click", function (event) {
-  event.preventDefault();
+document
+  .getElementById("iniciar-sesion-autorizado")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-  const usuarioAutorizado = {};
-  var visualizacionFormularioAutorizado = {};
+    const correo = document.getElementById(
+      "correo-electronico-autorizado"
+    ).value;
+    const clave = document.getElementById("clave-autorizado-inicio").value;
+    const esRobot = document.getElementById("usuario-autorizado-Check").checked;
+    const alertaError = document.getElementById("alertaErrorA");
 
-  usuarioAutorizado.correoElectronicoRegistro = document.getElementById(
-    "correo-electronico-autorizado"
-  ).value;
-  usuarioAutorizado.usuarioRegistroChecked = document.getElementById(
-    "usuario-autorizado-Check"
-  ).checked;
-  usuarioAutorizado.claveRegistro = document.getElementById(
-    "clave-autorizado-inicio"
-  ).value;
+    if (!esRobot) {
+      alertaError.innerHTML =
+        '<h4 class="bg-danger">Debes confirmar que no eres un robot.</h4>';
+      return;
+    }
 
-  //console.log(usuarioRegistro);
+    baseDatos
+      .collection("usuario")
+      .get()
+      .then((querySnapshot) => {
+        let autorizado = false;
 
-  //iniciar sesion registro
-  var siguiente = false;
-  baseDatos
-    .collection("usuario")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        visualizacionFormularioAutorizado = doc.data().paginaRegistroingreso;
-
-        if (visualizacionFormularioAutorizado.cargo == "usuario-autorizador") {
-          siguiente = validarContrasenasIngresoAutorizado(
-            usuarioAutorizado.correoElectronicoRegistro,
-            usuarioAutorizado.claveRegistro,
-            visualizacionFormularioAutorizado.correoRegistro,
-            visualizacionFormularioAutorizado.claveRegistro
-          );
-
-          if (siguiente) {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data().paginaRegistroingreso;
+          if (
+            data.cargo === "usuario-autorizador" &&
+            validarContrasenas(
+              correo,
+              clave,
+              data.correoRegistro,
+              data.claveRegistro
+            )
+          ) {
             alert("Contraseñas coinciden. ¡Bienvenido!");
             window.location.href = "../html/ingresoAutorizado.html";
+            autorizado = true;
           }
-        } else {
-          alert(
-            "Parece que no eres un usuario Autorizado, intentemoslo como Registrador"
-          );
-          window.location.href = "../html/iniciar-sesion-registro.html";
+        });
+
+        if (!autorizado) {
+          alertaError.innerHTML =
+            '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
         }
-      });
-      console.log(siguiente);
-      if (!siguiente) {
-        //alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-        const alertaError = document.getElementById("alertaErrorA");
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos de usuario:", error);
         alertaError.innerHTML =
-          '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
-      }
-    });
-});
+          '<h4 class="bg-danger">Ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.</h4>';
+      });
+    console.log(correo),
+      console.log(clave),
+      console.log(data.correoRegistro),
+      console.log(data.claveRegistro);
+    validarContrasenas();
+  });

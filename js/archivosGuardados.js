@@ -28,8 +28,10 @@ baseDatos
         qSAlturas.forEach((docAlturas) => {
           const datosAlturas =
             docAlturas.data().impresionFormularioTrabajoAltura;
+          const idAlturas = docAlturas.id;
           qSATS.forEach((docATS) => {
             const datosATS = docATS.data().impresionFormularioAts;
+            const idATS = docATS.id;
             console.log(datosAlturas.nombreObra, datosATS.nombreObra); // -------------
             if (datosAlturas.nombreObra == datosATS.nombreObra) {
               contenedor.innerHTML += `
@@ -44,8 +46,8 @@ baseDatos
                       <li class="list-group-item">Direccion: <span>${datosAlturas.direccionTrabajoAltura}</span></li>
                     </ul>
                     <div class="card-body">
-                      <a href="../html/visualizacionFormularioATS.html" class="card-link" id="" >ATS</a>
-                      <a href="../html/visualizacionFormularioAlturas.html" class="card-link" id="" >Alturas</a>
+                      <a href="../html/visualizacionFormularioATS.html?id=${idATS}" class="card-link" id="">ATS</a>
+                      <a href="../html/visualizacionFormularioAlturas.html?id=${idAlturas}" class="card-link" id="">Alturas</a>
                     </div>
                 </div>
               </div>
