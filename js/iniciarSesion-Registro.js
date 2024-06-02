@@ -50,20 +50,13 @@ document
               correo,
               clave,
               data.correoRegistro,
-              data.claveRegistro,
-              console.log(correo),
-              console.log(clave),
-              console.log(data.correoRegistro),
-              console.log(data.claveRegistro)
+              data.claveRegistro
             )
           ) {
-            console.log(correo);
-            console.log(clave);
-            console.log(data.correoRegistro);
-            console.log(data.claveRegistro);
             alert("Contraseñas coinciden. ¡Bienvenido!");
-            window.location.href = "../html/ingresoRegistro.html";
             autorizado = true;
+            localStorage.setItem("correoUsuarioRegistrado", correo);
+            window.location.href = "../html/ingresoRegistro.html";
           }
           if (
             data.cargo === "usuario-autorizador" &&
@@ -71,27 +64,23 @@ document
               correo,
               clave,
               data.correoRegistro,
-              data.claveRegistro,
-              console.log(correo),
-              console.log(clave),
-              console.log(data.correoRegistro),
-              console.log(data.claveRegistro)
+              data.claveRegistro
             )
           ) {
             alert("Usted es un usuario autorizador");
-            window.location.href = "../html/iniciar-sesion-autorizador.html";
             autorizado = true;
+            localStorage.setItem("correoUsuarioRegistrado", correo);
+            window.location.href = "../html/iniciar-sesion-autorizador.html";
           }
         });
 
         if (!autorizado) {
+          const alertaError = document.getElementById("alertaError");
           alertaError.innerHTML =
             '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
         }
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos de usuario: ", error);
       });
-    console.log(correo),
-      console.log(clave),
-      console.log(data.correoRegistro),
-      console.log(data.claveRegistro);
-    validarContrasenas();
   });

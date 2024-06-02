@@ -105,3 +105,12 @@ body {
   margin: 0 auto;
   background-color: white;
 }
+
+.drive-link {
+  color: #007bff;
+  text-decoration: underline;
+}
+.drive-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}

@@ -1,5 +1,4 @@
-// inicio De codigo firebase
-
+// Firebase configuration and initialization
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -9,11 +8,8 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
-
-// fin de codigo firebase
 
 let usuario = {
   nombre: "........ ",
@@ -23,123 +19,58 @@ let usuario = {
   opcionDocumento: ".............",
   numeroIdentificacion: "..........",
 };
-// nombre;
-const nombreIngreso = document.getElementById("nombreIngreso");
 
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        nombreIngreso.textContent = usuario.nombrePaginaRegistro;
+// Obtén el correo del usuario registrado desde localStorage
+const correoUsuarioRegistrado = localStorage.getItem("correoUsuarioRegistrado");
+
+if (correoUsuarioRegistrado) {
+  baseDatos
+    .collection("usuario")
+    .where(
+      "paginaRegistroingreso.correoRegistro",
+      "==",
+      correoUsuarioRegistrado
+    )
+    .get()
+    .then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.error(
+          "No se encontró ningún usuario con el correo proporcionado."
+        );
+      } else {
+        querySnapshot.forEach((doc) => {
+          usuario = doc.data().paginaRegistroingreso;
+
+          document.getElementById("nombreIngreso").textContent =
+            usuario.nombrePaginaRegistro;
+          document.getElementById("apellidoIngreso").textContent =
+            usuario.apellidoPaginaRegistro;
+          document.getElementById("numeroDocumento-ingreso").textContent =
+            usuario.numeroIdentificacion;
+          document.getElementById("tipoDocumento-ingreso").textContent =
+            usuario.opcionDocumento;
+          document.getElementById("celularIngreso").textContent =
+            usuario.numeroTelefonico;
+          document.getElementById("correo-ingreso").textContent =
+            usuario.correoRegistro;
+
+          // Verificar si el usuario es autorizador o registrador y actualizar el mensaje correspondiente
+          const contenedorUsuario = document.getElementById(
+            "usuarioIngresado-a-r"
+          );
+          const mensajeUsuario = document.createElement("h3");
+          if (usuario.cargo === "usuario-autorizador") {
+            mensajeUsuario.textContent = "Ingreso de Usuario Autorizador";
+          } else {
+            mensajeUsuario.textContent = "Ingreso de Usuario Registro";
+          }
+          contenedorUsuario.appendChild(mensajeUsuario);
+        });
       }
+    })
+    .catch((error) => {
+      console.error("Error obteniendo los datos del usuario: ", error);
     });
-  });
-
-//apellido
-
-const apellidoIngreso = document.getElementById("apellidoIngreso");
-
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        apellidoIngreso.textContent = usuario.apellidoPaginaRegistro;
-      }
-    });
-  });
-
-// celular
-
-const celularIngreso = document.getElementById("celularIngreso");
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        celularIngreso.textContent = usuario.numeroTelefonico;
-      }
-    });
-  });
-
-// correo
-
-const contenedorCorreo = document.getElementById("correo-ingreso");
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        contenedorCorreo.textContent = usuario.correoRegistro;
-      }
-    });
-  });
-
-// Tipo Documento
-
-const contenedorTipoDocumento = document.getElementById(
-  "tipoDocumento-ingreso"
-);
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        contenedorTipoDocumento.textContent = usuario.opcionDocumento;
-      }
-    });
-  });
-// Numero Documento Documento
-
-const contenedorNumeroDocumento = document.getElementById(
-  "numeroDocumento-ingreso"
-);
-baseDatos
-  .collection("usuario")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.id == "s62RiHOi9ZA8SoBHcPzy") {
-        usuario = doc.data().paginaRegistroingreso;
-        contenedorNumeroDocumento.textContent = usuario.numeroIdentificacion;
-      }
-    });
-  });
-
-// descripcion si es usuario autroizado o registro
-
-var autorizado = false;
-var registro = true;
-
-function ingresoRegistroAutorizado() {
-  if (autorizado === true) {
-    const contenedor3 = document.getElementById("usuarioIngresado-a-r");
-    const texto3 = document.createElement("h3"); // crear Elemento
-
-    usuariaIngresadoAR = document.createTextNode(
-      "Ingreso de Usuario Autorizado"
-    ); //crear el texto
-    texto3.appendChild(usuariaIngresadoAR); // uniendo texto con etiqueta
-    contenedor3.appendChild(texto3); // uniendo el contenedor don el texto
-  }
-  if (registro === true) {
-    const contenedor3 = document.getElementById("usuarioIngresado-a-r");
-    const texto3 = document.createElement("h3"); // crear Elemento
-
-    usuariaIngresadoAR = document.createTextNode("Ingreso de Usuario registro"); //crear el texto
-    texto3.appendChild(usuariaIngresadoAR); // uniendo texto con etiqueta
-    contenedor3.appendChild(texto3); // uniendo el contenedor don el texto
-  }
+} else {
+  console.error("No se encontró el correo del usuario en localStorage.");
 }
-ingresoRegistroAutorizado();

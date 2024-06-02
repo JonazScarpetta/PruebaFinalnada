@@ -1,3 +1,4 @@
+// Firebase configuration and initialization
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -7,7 +8,6 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
@@ -38,25 +38,23 @@ if (docId) {
           usuarioTA.contactoEmergencia;
         document.getElementById("celInfEmeTA").textContent =
           usuarioTA.numeroCelularEmergencia;
-        document.getElementById("planillaTA").textContent =
+        document.getElementById("planillaTA").href =
           usuarioTA.planillaSeguridadSocial;
         document.getElementById("venPlanillaTA").textContent =
           usuarioTA.fechaVencimientoPlanilla;
-        document.getElementById("curAlturasTA").textContent =
-          usuarioTA.cursoAlturas;
+        document.getElementById("curAlturasTA").href = usuarioTA.cursoAlturas;
         document.getElementById("fechaVencimientoCursoAlturas").textContent =
           usuarioTA.fechaVencimientoCursoAlturas;
-        document.getElementById("examenMedico").textContent =
-          usuarioTA.examenMedico;
+        document.getElementById("examenMedico").href = usuarioTA.examenMedico;
         document.getElementById("fechaVencimientoExamenMedico").textContent =
           usuarioTA.fechaVencimientoExamenMedico;
         document.getElementById("nombreArl").textContent = usuarioTA.nombreArl;
         document.getElementById("nombreEps").textContent = usuarioTA.nombreEps;
-        document.getElementById("registroFotograficoTrabajador").textContent =
+        document.getElementById("registroFotograficoTrabajador").href =
           usuarioTA.registroFotograficoTrabajador;
         document.getElementById("nombreFondoPensiones").textContent =
           usuarioTA.nombreFondoPensiones;
-        document.getElementById("firmaDigitalTrabajador").textContent =
+        document.getElementById("firmaDigitalTrabajador").href =
           usuarioTA.firmaDigitalTrabajador;
       } else {
         console.error("No such document!");

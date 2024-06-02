@@ -1,4 +1,4 @@
-// Configuración e inicialización de Firebase
+// Firebase configuration and initialization
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -8,11 +8,9 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// Validar contraseñas
 function validarContrasenas(
   correoIngreso,
   contraseñaIngreso,
@@ -58,6 +56,7 @@ document
             )
           ) {
             alert("Contraseñas coinciden. ¡Bienvenido!");
+            localStorage.setItem("correoUsuarioAutorizado", correo);
             window.location.href = "../html/ingresoAutorizado.html";
             autorizado = true;
           }
@@ -68,11 +67,7 @@ document
               correo,
               clave,
               data.correoRegistro,
-              data.claveRegistro,
-              console.log(correo),
-              console.log(clave),
-              console.log(data.correoRegistro),
-              console.log(data.claveRegistro)
+              data.claveRegistro
             )
           ) {
             alert("Usted es un usuario registrador");
@@ -85,10 +80,8 @@ document
           alertaError.innerHTML =
             '<h4 class="bg-danger">Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</h4>';
         }
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos de usuario: ", error);
       });
-    console.log(correo),
-      console.log(clave),
-      console.log(data.correoRegistro),
-      console.log(data.claveRegistro);
-    validarContrasenas();
   });
