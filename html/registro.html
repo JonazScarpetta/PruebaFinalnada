@@ -128,24 +128,16 @@
           required
         />
 
-        <label class="bg-white d-inline form-label" for="cargar-archivo-imagen"
-          >Cargar Imagen:</label
-        >
-        <input
-          id="cargar-imagen"
-          name="cargar-imagen"
-          type="file"
-          class="form-control"
-          aria-label="file example"
-          required
-        />
-        <div class="invalid-feedback">Cargar archivo PDF</div>
-
         <div class="mb-3">
           <label for="clave-de-registro" class="bg-white d-inline form-label"
             >Password</label
           >
-          <input type="password" class="form-control" id="clave-de-registro" />
+          <input
+            type="password"
+            class="form-control"
+            id="clave-de-registro"
+            required
+          />
         </div>
 
         <div class="mb-3">
@@ -158,6 +150,7 @@
             type="password"
             class="form-control"
             id="confirmacion-clave-de-registro"
+            required
           />
         </div>
       </form>
@@ -165,17 +158,17 @@
 
     <div class="row justify-content-evenly mb-3 pt-3">
       <div class="col-4">
-        <button type="submit" id="retorno" class="btn btn-primary">
+        <button type="button" id="retorno" class="btn btn-primary">
           <a class="text-white" href="/index.html">Inicio</a>
         </button>
       </div>
       <div class="col-4">
         <button
-          type="submit"
+          type="button"
           id="iniciar-sesion-pagina-registro"
           class="btn btn-primary"
         >
-          <a class="text-white" href="">Registrar</a>
+          <a class="text-white" href="#">Registrar</a>
         </button>
       </div>
     </div>

@@ -1,5 +1,4 @@
-// inicio De codigo firebase
-
+// Firebase configuration and initialization
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -9,13 +8,12 @@ const firebaseConfig = {
   appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const baseDatos = firebase.firestore();
 
-// fin de codigo firebase
-
+// Reference to the registration button
 let paginaRegistro = document.getElementById("iniciar-sesion-pagina-registro");
+
 paginaRegistro.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -37,57 +35,50 @@ paginaRegistro.addEventListener("click", function (event) {
   paginaRegistroingreso.cargo = document.getElementById("cargo").value;
   paginaRegistroingreso.correoRegistro =
     document.getElementById("correo-registro").value;
-  paginaRegistroingreso.cargarImagen =
-    document.getElementById("cargar-imagen").value;
   paginaRegistroingreso.claveRegistro =
     document.getElementById("clave-de-registro").value;
   paginaRegistroingreso.confirmacionClaveRegistro = document.getElementById(
     "confirmacion-clave-de-registro"
   ).value;
 
-  console.log(paginaRegistroingreso);
-
-  // if (validarContraseñas()) {
-  baseDatos
-    .collection("usuario")
-    .add({
-      paginaRegistroingreso,
-    })
-    .then((docRef) => {
-      alert("Datos Guardados correctamente");
-    })
-    .catch((error) => {
-      alert("Error");
-      console.error(error);
-    });
-  //}
+  if (
+    validarContraseñas(
+      paginaRegistroingreso.claveRegistro,
+      paginaRegistroingreso.confirmacionClaveRegistro
+    )
+  ) {
+    baseDatos
+      .collection("usuario")
+      .add({
+        paginaRegistroingreso,
+      })
+      .then((docRef) => {
+        alert("Datos Guardados correctamente");
+        window.location.href = "/index.html"; // Redirect after successful registration
+      })
+      .catch((error) => {
+        alert("Error al guardar los datos");
+        console.error("Error adding document: ", error);
+      });
+  }
 });
 
-function validarContraseñas() {
-  // Expresiones regulares para verificar las condiciones
-  let validacion = false;
-  var tieneMayuscula = /[A-Z]/.test(paginaRegistroingreso.claveRegistro);
-  var tieneNumero = /\d/.test(paginaRegistroingreso.claveRegistro);
-  var longitudValida = paginaRegistroingreso.claveRegistro.length >= 8;
+function validarContraseñas(clave, confirmacionClave) {
+  let validacion = true;
+  const tieneMayuscula = /[A-Z]/.test(clave);
+  const tieneNumero = /\d/.test(clave);
+  const longitudValida = clave.length >= 8;
 
-  // Verificar las condiciones
   if (
-    paginaRegistroingreso.claveRegistro ===
-      paginaRegistroingreso.confirmacionClaveRegistro &&
-    tieneMayuscula &&
-    tieneNumero &&
-    longitudValida
+    clave !== confirmacionClave ||
+    !tieneMayuscula ||
+    !tieneNumero ||
+    !longitudValida
   ) {
-    alert("Contraseñas coinciden. ¡Bienvenido!");
-    validacion = true;
-    window.location.href = "/index.html";
-  } else {
-    var mensajeError =
+    validacion = false;
+    let mensajeError =
       "Las contraseñas no coinciden o no cumplen con los requisitos:\n";
-    if (
-      paginaRegistroingreso.claveRegistro !==
-      paginaRegistroingreso.confirmacionClaveRegistro
-    ) {
+    if (clave !== confirmacionClave) {
       mensajeError += "- Las contraseñas no coinciden.\n";
     }
     if (!tieneMayuscula) {
@@ -101,5 +92,6 @@ function validarContraseñas() {
     }
     alert(mensajeError);
   }
+
   return validacion;
 }
