@@ -82,7 +82,7 @@ trabajadorDatos.addEventListener("click", function () {
     })
     .then((docRef) => {
       alert("Datos Guardados correctamente");
-      window.location.href = "ingresoRegistro.html"; // Redirigir después de guardar
+      window.location.href = "../html/ingresoRegistro.html"; // Redirigir después de guardar
     })
     .catch((error) => {
       alert("Error");

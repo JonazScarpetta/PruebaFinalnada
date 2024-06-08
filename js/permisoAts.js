@@ -245,7 +245,7 @@ function saveLocation(position) {
     })
     .then(() => {
       alert("Ubicación guardada exitosamente!");
-      window.location.href = "ingresoRegistro.html"; // Redirigir después de guardar la ubicación
+      window.location.href = "../html/ingresoRegistro.html"; // Redirigir después de guardar la ubicación
     })
     .catch((error) => {
       console.error("Error al guardar la ubicación: ", error);
