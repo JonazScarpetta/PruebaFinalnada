@@ -1,5 +1,3 @@
-// inicio De codigo firebase
-
 const firebaseConfig = {
   apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
   authDomain: "bd-appconnet.firebaseapp.com",
@@ -118,6 +116,7 @@ formularioDatosAts.addEventListener("click", function () {
     })
     .then((docRef) => {
       alert("Datos Guardados correctamente");
+      getGeolocation(); // Llamar a la función para obtener y guardar la geolocalización
     })
     .catch((error) => {
       alert("Error");
@@ -126,8 +125,6 @@ formularioDatosAts.addEventListener("click", function () {
 });
 
 // Manejo del Canvas para la firma digital
-// codigo sin importar la psicion
-
 const canvas = document.getElementById("signatureCanvas");
 const ctx = canvas.getContext("2d");
 let drawing = false;
@@ -167,11 +164,13 @@ function clearCanvas() {
 function saveSignature() {
   const dataURL = canvas.toDataURL("image/png");
   const file = dataURLtoBlob(dataURL);
-  const storageRef = storage.ref("signatures/" + new Date().getTime() + ".png");
+  const storageRef = firebase
+    .storage()
+    .ref("signatures/" + new Date().getTime() + ".png");
 
   storageRef.put(file).then(function (snapshot) {
     snapshot.ref.getDownloadURL().then(function (downloadURL) {
-      firestore
+      baseDatos
         .collection("signatures")
         .add({
           url: downloadURL,
@@ -246,6 +245,7 @@ function saveLocation(position) {
     })
     .then(() => {
       alert("Ubicación guardada exitosamente!");
+      window.location.href = "ingresoRegistro.html"; // Redirigir después de guardar la ubicación
     })
     .catch((error) => {
       console.error("Error al guardar la ubicación: ", error);

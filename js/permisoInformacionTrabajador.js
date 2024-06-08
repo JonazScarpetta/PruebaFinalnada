@@ -70,7 +70,7 @@ trabajadorDatos.addEventListener("click", function () {
   impresionTrabajadorDatos.registroFotograficoTrabajador =
     document.getElementById("registro-fotografico-trabajador").value;
   impresionTrabajadorDatos.firmaDigitalTrabajador = document.getElementById(
-    "firma-digital-trabajador"
+    "archivoFirmaDigitalSst"
   ).value;
 
   console.log(impresionTrabajadorDatos);
@@ -82,6 +82,7 @@ trabajadorDatos.addEventListener("click", function () {
     })
     .then((docRef) => {
       alert("Datos Guardados correctamente");
+      window.location.href = "ingresoRegistro.html"; // Redirigir después de guardar
     })
     .catch((error) => {
       alert("Error");
