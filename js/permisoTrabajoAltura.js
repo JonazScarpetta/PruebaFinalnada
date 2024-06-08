@@ -219,7 +219,7 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
     .add({ impresionFormularioTrabajoAltura })
     .then((docRef) => {
       alert("Datos Guardados correctamente");
-      window.location.href = "ingresoRegistro.html"; // Redirigir después de guardar los datos
+      window.location.href = "../html/ingresoRegistro.html"; // Redirigir después de guardar los datos
     })
     .catch((error) => {
       alert("Error");
