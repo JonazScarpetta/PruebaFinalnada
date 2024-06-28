@@ -54,7 +54,7 @@ paginaRegistro.addEventListener("click", function (event) {
       })
       .then((docRef) => {
         alert("Datos Guardados correctamente");
-        window.location.href = "../html/index.html"; // Redirect after successful registration
+        window.location.href = "../index.html";
       })
       .catch((error) => {
         alert("Error al guardar los datos");
